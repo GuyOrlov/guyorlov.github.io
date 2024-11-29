@@ -95,6 +95,18 @@
     color: black;
 }
 
+/* For the home page, set white background */
+body.home-page {
+    background-color: #fff; /* White background */
+    color: #212529; /* Black text for readability */
+}
+
+/* Black background for projects and services sections */
+.projects-section, .section-services {
+    background-color: #000; /* Black */
+    color: #fff; /* White text */
+}
+
   #cta {
     background-color: #f4f4f4;
     text-align: center;
@@ -338,9 +350,6 @@ body {
     background-color: #ffc107; /* Yellow hover effect */
     color: #000;
 }
-
-
-
 
 hr {
   margin: 1rem 0;
@@ -637,9 +646,6 @@ table {
         width: 100%; /* Full width for mobile */
     }
 }
-
-
-
 
 caption {
   padding-top: 0.5rem;

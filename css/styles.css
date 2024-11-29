@@ -217,143 +217,93 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body {
+    font-family: 'Muli', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
 /* Section Styles */
-.services-section {
-  background-color: #000;
-  color: #fff;
-  padding: 50px 20px;
+.section-services, .projects-section {
+    padding: 50px 20px;
 }
 
 /* Container Styles */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+.container, .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* Title and Description Styles */
-.service-title {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #fff;
+.service-title, .section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
 }
 
-.service-description {
-  font-size: 1.2em;
-  color: #ccc;
-  margin-bottom: 40px;
+.service-description, .project-description, .lead {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #aaa;
+    margin-bottom: 40px;
 }
 
-/* Flexbox Container for Service Boxes */
-.service-boxes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+/* Flexbox Container for Boxes */
+.service-boxes, #service-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* Service Box Styles */
-.service-box {
-  width: 90%;
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  text-align: center;
+/* Box Styles */
+.service-box, .project-box {
+    width: 90%;
+    max-width: 300px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 /* Icon Styles */
-.service-icon {
-  font-size: 2em;
-  color: #00bcd4;
-  margin-bottom: 10px;
+.service-box i, .service-icon {
+    font-size: 2.5em;
+    color: #00bcd4;
+    margin-bottom: 15px;
 }
 
-/* Service Title Styles */
-.service-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 15px;
+/* Box Titles */
+.service-box h3, .project-details h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
 }
 
-/* Service Description Styles */
-.service-description {
-  color: #aaa;
-  font-size: 1em;
-  line-height: 1.6;
-}
-
-/* Projects Section */
-.projects-section {
-  background-color: #000;
-  color: #fff;
-  padding: 50px 20px;
-}
-
-/* Container Styles */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Section Title Styles */
-.section-title {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-/* Project Box Styles */
-.project-box {
-  width: 90%;
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin-bottom: 40px;
+/* Box Descriptions */
+.service-box p, .project-description {
+    font-size: 1em;
+    color: #ccc;
 }
 
 /* Image Container Styles */
 .image-container {
-  max-width: 100%;
-  margin-bottom: 20px;
+    max-width: 100%;
+    margin-bottom: 20px;
 }
 
-/* Image Styles */
+/* Responsive Image Styles */
 .responsive-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-/* Project Title Styles */
-.project-details h3 {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-/* Project Description Styles */
-.project-description {
-  color: #ccc;
-  font-size: 1.1em;
-  margin-bottom: 15px;
-}
-
-/* Lead Paragraph Styles */
-.lead {
-  color: #aaa;
-  font-size: 1em;
-  line-height: 1.6;
-}
 
 
 hr {

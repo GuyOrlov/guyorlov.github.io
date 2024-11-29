@@ -98,7 +98,7 @@
 /* For the home page, set white background */
 body.home-page {
     background-color: #fff; /* White background */
-    color: #212529; /* Black text for readability */
+    color: #333; /* Black text for readability */
 }
 
 /* Black background for projects and services sections */
@@ -259,7 +259,7 @@ body {
 .service-description, .project-description, .lead {
     font-size: 1.2em;
     line-height: 1.6;
-    color: #ccc; /* Lighter text for better readability */
+    color: #666; /* Lighter text for better readability */
     margin-bottom: 40px;
 }
 
@@ -11163,7 +11163,7 @@ textarea.form-control-lg {
 }
 body {
   padding-top: 3.375rem;
-  color: #6c757d;
+  color: #333;
 }
 
 @media (min-width: 992px) {

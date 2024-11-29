@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Discover impactful data analytics and visualisation services by Guy Orlov, specializing in accessibility and insights." />
-    <meta name="author" content="Guy Orlov" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Discover impactful data analytics and visualisation services by Guy Orlov, specializing in accessibility and insights.">
+    <meta name="author" content="Guy Orlov">
+    <meta property="og:title" content="Guy Orlov | Data Analyst | Portfolio">
+    <meta property="og:description" content="Explore impactful data visualizations and dashboards by Guy Orlov, a specialist in accessibility and data storytelling.">
+    <meta property="og:image" content="/img/profile.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
     <title>Guy Orlov | Data Analyst | Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Font Awesome icons (free version) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;800&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/styles.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav" aria-label="Main navigation">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">Guy Orlov | Portfolio</span>
             <span class="d-none d-lg-block">
-                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/profile.jpg" alt="Guy Orlov Photo" loading="lazy" />
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/profile.jpg" alt="Guy Orlov Profile Photo" loading="lazy">
             </span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about"><i class="fa-solid fa-circle-info"></i> About</a></li>
@@ -42,31 +50,43 @@
 
     <!-- Page Content -->
     <div class="container-fluid p-0">
-        <section id="portfolio" style="padding: 50px 20px;">
-            <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                <h2 class="service-title">Portfolio</h2>
-                <p style="font-size: 1.2em; color: #ccc; margin-bottom: 40px;">
+        <section id="portfolio" aria-labelledby="portfolio-title" style="padding: 50px 20px;">
+            <div class="container text-center">
+                <h2 id="portfolio-title" class="service-title">Portfolio</h2>
+                <p class="lead text-muted">
                     Showcasing my work in data analysis, visualization, and storytelling.
                 </p>
-                <div id="project-boxes">
-                    <div class="service-box">
-                        <i class="fas fa-chart-bar"></i>
-                        <h3>POWER BI DESKTOP | Figma</h3>
-                        <p>The dashboard focuses on the Economic inactivity of Disabled People, providing key insights for educators and training providers.</p>
+                <div class="row justify-content-center" id="project-boxes">
+                    <!-- Project 1 -->
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                            <h3>POWER BI DESKTOP | Figma</h3>
+                            <p>The dashboard focuses on the economic inactivity of disabled people, providing key insights for educators and training providers.</p>
+                        </div>
                     </div>
-                    <div class="service-box">
-                        <i class="fas fa-chart-pie"></i>
-                        <h3>TABLEAU DESKTOP | FIGMA</h3>
-                        <p>My first Tableau project, involving data cleaning, Power Query, and dashboard design with Figma.</p>
+                    <!-- Project 2 -->
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                            <h3>TABLEAU DESKTOP | Figma</h3>
+                            <p>My first Tableau project, involving data cleaning, Power Query, and dashboard design with Figma.</p>
+                        </div>
                     </div>
-                    <div class="service-box">
-                        <i class="fas fa-users"></i>
-                        <h3>POWER BI DESKTOP | POWERPOINT</h3>
-                        <p>A project for Deaf Together Wales to highlight the inclusion of deaf people through events and activities.</p>
+                    <!-- Project 3 -->
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <h3>POWER BI DESKTOP | PowerPoint</h3>
+                            <p>A project for Deaf Together Wales to highlight the inclusion of deaf people through events and activities.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -306,14 +306,14 @@ body {
     text-decoration: none;  /* Removes underline */
     color: inherit;         /* Ensures the link color inherits from the surrounding text */
     transition: background-color 0.3s, color 0.3s;
+    padding: 0 5px;         /* Adds padding to make the background effect look nicer */
 }
 
 /* Hover effect for the portfolio link */
 .portfolio-link:hover {
-    background-color: black;   /* Background turns black on hover */
-    color: white;              /* Text turns white on hover */
-    padding: 0 5px;            /* Adds some padding around the text */
-    border-radius: 4px;        /* Optional: rounds the corners of the background */
+    background-color: black; /* Background turns black on hover */
+    color: white;            /* Text turns white on hover */
+    border-radius: 4px;      /* Optional: rounds the corners of the background */
 }
 
 /* Project Details */

@@ -72,14 +72,14 @@
     <div class="container-fluid p-0">
         <!-- Your content here -->
     </div>
-    
-        // Load the navigation dynamically from nav.html
-        fetch('/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-    </script>
+        <script>
+            // Load the navigation dynamically from nav.html
+            fetch('/nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+        </script>
 
     <!-- Page Content -->
     <div class="container-fluid p-0">

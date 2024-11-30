@@ -144,31 +144,15 @@ body.home-page {
 }
 
 @media (max-width: 768px) {
-  /* Center text for Testimonials */
-  #testimonials h2, #testimonials p {
-    text-align: center;
-  }
-
-  /* Center text for Projects */
-  #projects h2, #projects p {
-    text-align: center;
-  }
-
-  /* Center text for Skills */
-  #skills h2, #skills p {
-    text-align: center;
-  }
-
-  /* Center text for Certifications */
-  #certifications h2, #certifications p {
-    text-align: center;
-  }
-
-  /* Center text for Contact */
-  #contact h2, #contact p {
-    text-align: center;
-  }
+    #testimonials h2, #testimonials p,
+    #projects h2, #projects p,
+    #skills h2, #skills p,
+    #certifications h2, #certifications p,
+    #contact h2, #contact p {
+        text-align: center;
+    }
 }
+
 
 /* Aspect ratio container */
 .aspect-ratio {

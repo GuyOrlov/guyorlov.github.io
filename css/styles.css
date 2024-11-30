@@ -129,19 +129,18 @@ body.home-page {
   }
 
 .cta-button {
-  display: inline-block;
-  background-color: #0078d7;
-  color: #ffffff; /* Ensure the text is white */
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    background-color: #0078d7;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #000000;
-  color: #ffffff; /* Keep the text white on hover */
+    background-color: #000000; /* Same background as the hover state */
 }
 
 @media (max-width: 768px) {

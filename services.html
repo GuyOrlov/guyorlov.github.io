@@ -73,6 +73,7 @@
         <!-- Your content here -->
     </div>
 
+    <script>
         // Load the navigation dynamically from nav.html
         fetch('/nav.html')
             .then(response => response.text())
@@ -80,6 +81,7 @@
                 document.getElementById('navbar-placeholder').innerHTML = data;
             });
     </script>
+
     <!-- Page Content -->
     <div class="container-fluid p-0">
         <section id="services" class="section-services">

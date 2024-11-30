@@ -301,6 +301,21 @@ body {
     margin-bottom: 20px;
 }
 
+/* Style for the portfolio link */
+.portfolio-link {
+    text-decoration: none;  /* Removes underline */
+    color: inherit;         /* Ensures the link color inherits from the surrounding text */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for the portfolio link */
+.portfolio-link:hover {
+    background-color: black;   /* Background turns black on hover */
+    color: white;              /* Text turns white on hover */
+    padding: 0 5px;            /* Adds some padding around the text */
+    border-radius: 4px;        /* Optional: rounds the corners of the background */
+}
+
 /* Project Details */
 .project-details {
     padding: 15px;

@@ -319,24 +319,24 @@ body {
 /* Project Details */
 .project-details {
     padding: 15px;
-    color: #fff; /* White text for project details */
+    color: #000; /* Change font color to black */
 }
 
 .project-details h3 {
     font-size: 1.25rem;
-    color: #ffc107; /* Yellow title */
+    color: #ffc107; /* Yellow title remains */
 }
 
 .project-details p {
     font-size: 1rem;
-    color: #ccc; /* Light text */
+    color: #333; /* Darker text for readability */
 }
 
 /* Hover Effect for CTA Button */
 .cta-button {
     display: inline-block;
     background-color: #0078d7;
-    color: #ffffff;
+    color: #000; /* Change font color to black */
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;

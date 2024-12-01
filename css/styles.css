@@ -11191,6 +11191,15 @@ p.lead {
   font-weight: 400;
 }
 
+/* Style for the subheading inside the resume-section */
+#about .subheading {
+  color: black; /* Set the color of the subheading to black */
+}
+
+#about .subheading span.text-primary {
+  color: rgba(var(--bs-primary-rgb), 1) !important; /* Keep primary color for the span */
+}
+
 .subheading {
   font-family: "Inter", "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;

@@ -259,6 +259,11 @@ body {
     color: #000; /* Black font color */
 }
 
+/* For titles in the projects section */
+#projects .project-box h3 {
+    color: #000; /* Black font color for project titles */
+}
+
 /* Box Styles */
 .service-box, .project-box {
     width: 90%;

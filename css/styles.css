@@ -361,7 +361,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: 'Inter', sans-serif;  /* Ensure font is applied across headings */
   font-weight: 700;
   line-height: 1.2;
-  color: #343a40;
+  color: #000;
 }
 
 h1, .h1 {

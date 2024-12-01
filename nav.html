@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title style="color: #333;">Guy Orlov | Data Analyst</title>
+    <title>Guy Orlov | Data Analyst</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -19,6 +19,19 @@
         body {
             font-family: 'Inter', sans-serif;
             font-weight: 400; /* Light font */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Default background style */
+        .bg-light-theme {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Dark background style */
+        .bg-dark-theme {
+            background-color: #333;
+            color: #f8f9fa;
         }
 
         /* Make navbar items lighter and change text color to light black */
@@ -46,18 +59,29 @@
             background-color: #555 !important; /* Darker grey when hovering over the icon */
         }
 
-        /* Optionally, adjust other text elements like headings to be lighter */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 400; /* Light font */
-        }
-
         /* Hover effect for nav links */
         .navbar-nav .nav-link:hover {
             color: #555; /* Darker grey on hover */
         }
+
+        /* Theme Switcher Button */
+        .theme-switcher-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #f8f9fa;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .theme-switcher-btn:hover {
+            background-color: #555;
+        }
     </style>
 </head>
-<body>
+<body class="bg-light-theme">
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav" aria-label="Main navigation">
     <a class="navbar-brand js-scroll-trigger" href="/index.html#page-top">
@@ -107,11 +131,30 @@
                 </a>
             </li>
         </ul>
+
+        <!-- Theme Switcher Button inside the navbar -->
+        <button class="theme-switcher-btn" onclick="toggleTheme()">Switch Theme</button>
     </div>
 </nav>
 
 <!-- Bootstrap JS (Optional) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Function to toggle between light and dark theme
+    function toggleTheme() {
+        var body = document.body;
+        
+        // Toggle classes to switch themes
+        if (body.classList.contains('bg-light-theme')) {
+            body.classList.remove('bg-light-theme');
+            body.classList.add('bg-dark-theme');
+        } else {
+            body.classList.remove('bg-dark-theme');
+            body.classList.add('bg-light-theme');
+        }
+    }
+</script>
 
 </body>
 </html>

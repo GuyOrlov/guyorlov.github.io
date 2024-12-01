@@ -7825,11 +7825,6 @@ textarea.form-control-lg {
   order: 6 !important;
 }
 
-.m-0 {
-  border-top: 1px solid #555; /* Dark gray color for the line */
-  margin: 0 !important;
-}
-
 .m-1 {
   margin: 0.25rem !important;
 }
@@ -7846,8 +7841,11 @@ textarea.form-control-lg {
   margin: 1.5rem !important;
 }
 
-.m-5 {
-  margin: 3rem !important;
+/* Style for horizontal rule (hr) with m-0 and mb-5 */
+hr.m-0.mb-5 {
+  border-top: 1px solid #555; /* Dark gray color for the line */
+  margin-bottom: 3rem; /* Margin applied for mb-5 */
+  margin-top: 0; /* Ensure no top margin */
 }
 
 .m-auto {

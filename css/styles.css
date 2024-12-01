@@ -246,7 +246,7 @@ body {
     font-size: 2.5em;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #ffc107; /* Bright yellow for titles */
+    color: #000; /* Bright yellow for titles */
 }
 
 .service-description, .project-description, .lead {

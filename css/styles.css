@@ -7826,6 +7826,7 @@ textarea.form-control-lg {
 }
 
 .m-0 {
+  border-top: 1px solid #555; /* Dark gray color for the line */
   margin: 0 !important;
 }
 

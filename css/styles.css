@@ -85,6 +85,15 @@
   box-sizing: border-box;
 }
 
+/* For mobile navigation (navbar brand) */
+.navbar-dark .navbar-brand {
+    color: #333 !important; /* Set the text color for mobile */
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: #555 !important; /* Set the hover color */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;

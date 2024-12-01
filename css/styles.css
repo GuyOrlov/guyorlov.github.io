@@ -106,45 +106,45 @@
 #sideNav {
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: ##696969; /* Darker gray background */
+  background-color: #696969; /* Darker gray background */
 }
 
 /* For the home page, set white background */
 body.home-page {
-    background-color: #F4F4F4; /* background */
-    color: #F4F4F4; /* Black text for readability */
+    background-color: #F4F4F4; /* light gray background */
+    color: #333333; /* Dark text for readability */
 }
 
 /* Black background for projects and services sections */
 .projects-section, .section-services {
-    background-color: #F4F4F4; /* Black */
-    color: #2E2E2E​; /* White text */
+    background-color: #F4F4F4; /* light gray */
+    color: #333333; /* Dark text */
 }
 
-  #cta {
+#cta {
     background-color: #f4f4f4;
     text-align: center;
     padding: 40px 20px;
     border-radius: 8px;
     margin: 20px auto;
     width: 80%;
-  }
+}
 
-  .cta-container h2 {
+.cta-container h2 {
     font-size: 24px;
-    color: #333;
+    color: #333333;
     margin-bottom: 15px;
-  }
+}
 
-  .cta-container p {
+.cta-container p {
     font-size: 16px;
-    color: #555;
+    color: #555555;
     margin-bottom: 20px;
-  }
+}
 
-/* Set text color to black for all headings */
+/* Set text color to dark for all headings */
 h2, .subheading, .resume-section-content span, .skills-list li {
-    color: black;
+    color: #333333; /* Darker text */
 }
 
 .cta-button {
@@ -159,9 +159,10 @@ h2, .subheading, .resume-section-content span, .skills-list li {
 }
 
 .cta-button:hover {
-    background-color: #000000; /* Same background as the hover state */
+    background-color: #000000; /* Darker hover state */
 }
 
+/* Media query adjustments */
 @media (max-width: 768px) {
     #testimonials h2, #testimonials p,
     #projects h2, #projects p,

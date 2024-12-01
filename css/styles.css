@@ -97,7 +97,7 @@
 
 /* For the home page, set white background */
 body.home-page {
-    background-color: #fff; /* White background */
+    background-color: #F4F4F4; /* background */
     color: #F4F4F4; /* Black text for readability */
 }
 
@@ -258,7 +258,7 @@ body {
 .service-box, .project-box {
     width: 90%;
     max-width: 300px;
-    background: #1a1a1a; /* Dark grey background for contrast */
+    background: #F4F4F4; /* Dark grey background for contrast */
     border: 1px solid #333;
     border-radius: 10px;
     padding: 20px;
@@ -269,7 +269,7 @@ body {
 
 .service-box:hover, .project-box:hover {
     transform: translateY(-5px);
-    background-color: #333; /* Slightly lighter on hover */
+    background-color: #F4F4F4; /* Slightly lighter on hover */
 }
 
 /* Icon Styles */

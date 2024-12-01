@@ -177,44 +177,12 @@
                     <i class="fa-regular fa-message" aria-hidden="true"></i> Contact
                 </a>
             </li>
-
-            <!-- Theme Switcher Button inside the navbar -->
-            <li class="nav-item theme-switcher-container">
-                <label class="theme-switcher">
-                    <input type="checkbox">
-                    <span class="slider"></span>
-                </label>
-                <span class="theme-switcher-label">Switch Theme</span>
-            </li>
-
         </ul>
     </div>
 </nav>
 
 <!-- Bootstrap JS (Optional) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Button to switch theme -->
-<button id="themeToggle">Switch to Black Theme</button>
-
-<button id="themeToggleButton">Switch to Black Theme</button>
-
-<script>
-  const themeToggleButton = document.getElementById('themeToggleButton');
-  
-  themeToggleButton.addEventListener('click', function() {
-    // Toggle the 'black-theme' class on the body element
-    document.body.classList.toggle('black-theme');
-
-    // Change button text based on current theme
-    if (document.body.classList.contains('black-theme')) {
-      themeToggleButton.textContent = "Switch to Gray Theme";
-    } else {
-      themeToggleButton.textContent = "Switch to Black Theme";
-    }
-  });
-</script>
-
 
 
 </body>

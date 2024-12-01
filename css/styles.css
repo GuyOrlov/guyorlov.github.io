@@ -11201,12 +11201,15 @@ p.lead {
 #sideNav {
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color: #333; /* Added background color */
 }
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
 }
+
 #sideNav .navbar-toggler:focus {
   outline-color: #d48a6e;
 }
@@ -11223,6 +11226,7 @@ p.lead {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
+    background-color: #333; /* Added background color for larger screens */
   }
   #sideNav .navbar-brand {
     display: flex;

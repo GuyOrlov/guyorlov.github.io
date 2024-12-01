@@ -64,20 +64,67 @@
             color: #555; /* Darker grey on hover */
         }
 
-        /* Theme Switcher Button */
-        .theme-switcher-btn {
+        /* Custom Theme Switcher Toggle Styles */
+        .theme-switcher-container {
+            display: flex;
+            align-items: center;
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #f8f9fa;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
         }
 
-        .theme-switcher-btn:hover {
-            background-color: #555;
+        /* Create the toggle switch */
+        .theme-switcher {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Hide the default checkbox input */
+        .theme-switcher input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Style the slider (the toggle itself) */
+        .theme-switcher .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        /* Create the circle inside the slider */
+        .theme-switcher .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+        }
+
+        /* Change the background of the slider when checked (for dark theme) */
+        .theme-switcher input:checked + .slider {
+            background-color: #333;
+        }
+
+        /* Move the circle inside the slider when checked */
+        .theme-switcher input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Optionally add a light/dark icon label */
+        .theme-switcher-label {
+            margin-left: 10px;
+            color: #333;
         }
     </style>
 </head>
@@ -132,8 +179,12 @@
             </li>
 
             <!-- Theme Switcher Button inside the navbar -->
-            <li class="nav-item">
-                <button class="theme-switcher-btn" onclick="toggleTheme()">Switch Theme</button>
+            <li class="nav-item theme-switcher-container">
+                <label class="theme-switcher">
+                    <input type="checkbox" onclick="toggleTheme()">
+                    <span class="slider"></span>
+                </label>
+                <span class="theme-switcher-label">Switch Theme</span>
             </li>
         </ul>
     </div>

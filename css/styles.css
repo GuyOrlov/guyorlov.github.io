@@ -85,6 +85,24 @@
   box-sizing: border-box;
 }
 
+/* Default theme (gray background) */
+body {
+  background-color: #F4F4F4; /* Light gray background */
+  color: #333333; /* Dark text */
+}
+
+/* Black background theme */
+body.black-theme {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+
+/* Optional: Style other elements for black theme */
+body.black-theme .navbar, body.black-theme .footer {
+  background-color: #222222; /* Dark gray for navbar/footer */
+}
+
+
 /* For mobile navigation (navbar brand) */
 .navbar-dark .navbar-brand {
     color: #333 !important; /* Set the text color for mobile */

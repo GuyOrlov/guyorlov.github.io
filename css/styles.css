@@ -91,6 +91,10 @@
   }
 }
 
+#certifications .fa-ul li {
+    color: black;
+}
+
 .text-black {
     color: black;
 }

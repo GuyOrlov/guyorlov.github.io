@@ -95,6 +95,11 @@
     color: black;
 }
 
+.section-title {
+    color: black;
+}
+
+
 /* For the home page, set white background */
 body.home-page {
     background-color: #F4F4F4; /* background */

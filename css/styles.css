@@ -344,7 +344,7 @@ body {
 
 .project-details h3 {
     font-size: 1.25rem;
-    color: #ffc107; /* Yellow title remains */
+    color: #000; /* Yellow title remains */
 }
 
 .project-details p {

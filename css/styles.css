@@ -103,6 +103,11 @@
     color: black;
 }
 
+#sideNav {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #d3d3d3; /* Light gray background */
+}
 
 /* For the home page, set white background */
 body.home-page {

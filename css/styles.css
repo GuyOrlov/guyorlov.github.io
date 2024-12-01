@@ -128,6 +128,11 @@ body.home-page {
     margin-bottom: 20px;
   }
 
+/* Set text color to black for all headings */
+h2, .subheading, .resume-section-content span, .skills-list li {
+    color: black;
+}
+
 .cta-button {
     display: inline-block;
     background-color: #0078d7;

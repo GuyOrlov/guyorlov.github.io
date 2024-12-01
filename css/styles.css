@@ -7843,7 +7843,7 @@ textarea.form-control-lg {
 
 /* Style for horizontal rule (hr) with m-0 and mb-5 */
 hr.m-0.mb-5 {
-  border-top: 1px solid #555; /* Dark gray color for the line */
+  border-top: 1px solid #000; /* Black color for the line */
   margin-bottom: 3rem; /* Margin applied for mb-5 */
   margin-top: 0; /* Ensure no top margin */
 }

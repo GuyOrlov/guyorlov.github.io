@@ -11233,7 +11233,7 @@ p.lead {
 #sideNav {
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #333; /* Added background color */
+  background-color: #d3d3d3; /* Light gray background */
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -11258,7 +11258,7 @@ p.lead {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
-    background-color: #333; /* Added background color for larger screens */
+    background-color: #d3d3d3; /* Light gray background for larger screens */
   }
   #sideNav .navbar-brand {
     display: flex;

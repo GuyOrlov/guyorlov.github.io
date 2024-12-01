@@ -254,6 +254,11 @@ body {
     gap: 20px;
 }
 
+/* Target h3 elements in the service boxes and change font color to black */
+#service-boxes .service-box h3 {
+    color: #000; /* Black font color */
+}
+
 /* Box Styles */
 .service-box, .project-box {
     width: 90%;

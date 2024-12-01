@@ -259,9 +259,9 @@ body {
     color: #000; /* Black font color */
 }
 
-/* For titles in the projects section */
-#portfolio .project-box h3 {
-    color: #000; /* Black font color for project titles */
+/* For titles in the portfolio section */
+#portfolio .service-box h3 {
+    color: #000; /* Black font color for portfolio project titles */
 }
 
 /* Box Styles */

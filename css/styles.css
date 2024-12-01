@@ -11312,3 +11312,12 @@ section.resume-section .resume-section-content {
     padding-bottom: 3rem;
   }
 }
+
+/* Style for the text inside the resume-section */
+#about h1 span.text-primary {
+  color: rgba(var(--bs-primary-rgb), 1) !important; /* Primary color for Orlov */
+}
+
+#about h1 {
+  color: black; /* Set color to black for the "Guy" part */
+}

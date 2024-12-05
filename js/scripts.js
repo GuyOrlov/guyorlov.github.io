@@ -3,9 +3,6 @@
 * Copyright 2013-2023 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
 */
-// 
-// Scripts
-//
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -47,7 +44,9 @@ window.addEventListener('DOMContentLoaded', event => {
         if (container) {  // Check if container exists to avoid errors
             certifications.forEach(cert => {
                 const certBox = document.createElement("div");
-                certBox.classList.add("col-md-4", "mb-4");
+
+                // Add responsive Bootstrap classes here
+                certBox.classList.add("col-sm-6", "col-md-4", "col-lg-3", "mb-4");
 
                 certBox.innerHTML = `
                     <div class="certification-box">
@@ -61,6 +60,7 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     };
 
-    // Call function to render certifications
+    // Render certifications when page loads
     renderCertifications();
+
 });

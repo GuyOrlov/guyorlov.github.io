@@ -62,6 +62,21 @@
 </head>
 
 <body id="page-top" class="home-page">
+        <!-- Navigation -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Page Content -->
+    <div class="container-fluid p-0">
+        <!-- Your content here -->
+    </div>
+        <script>
+        // Load the navigation dynamically from nav.html
+        fetch('/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+    </script>
     <div class="container-fluid p-0">
         <section id="portfolio" aria-labelledby="portfolio-title" style="padding: 50px 20px;">
             <div class="container text-center">

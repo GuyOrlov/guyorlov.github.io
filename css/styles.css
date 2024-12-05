@@ -632,28 +632,6 @@ table {
   border-collapse: collapse;
 }
 
-/* Skill Bar Colors */
-
-/* Technical skills like Tableau */
-.technical {
-    background-color: #e24b32; /* Red */
-}
-
-/* Data skills like Power BI */
-.data {
-    background-color: #007bff; /* Blue */
-}
-
-/* Design skills like Figma */
-.design {
-    background-color: #9c27b0; /* Purple */
-}
-
-/* Spreadsheet skills like Excel and Google Sheets */
-.spreadsheet {
-    background-color: #4caf50; /* Green */
-}
-
 /* Default Skill Percentage Display */
 .skill-percentage {
     position: absolute;

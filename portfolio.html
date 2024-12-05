@@ -1,81 +1,221 @@
-/* General Styles for Tags */
-.tag {
-    cursor: pointer;
-    padding: 5px 10px;
-    margin: 5px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    font-size: 1rem; /* Default font size */
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore Guy Orlov's data analytics portfolio with Power BI, SQL, Tableau, Excel, and Figma projects. Accessible dashboards and actionable insights for businesses." />
+    <meta name="author" content="Guy Orlov" />
+    <meta name="keywords" content="Guy Orlov, Power BI, SQL, Data Analyst, Dashboards, Data Visualisation, Accessibility, Tableau, Figma, Microsoft Excel, Business Intelligence, West Midlands" />
+
+    <!-- Title Tag -->
+    <title>Power BI & SQL Portfolio | Guy Orlov | Data Analyst, Dashboards & Accessibility Expert</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Core Theme CSS (includes Bootstrap) -->
+    <link href="css/styles.css" rel="stylesheet" />
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Guy Orlov | Data Analyst, Dashboards & Accessibility Expert" />
+        <meta property="og:description" content="Explore Guy Orlov's data analytics portfolio with Power BI, SQL, Tableau, Excel, and Figma projects." />
+        <meta property="og:image" content="path-to-image.jpg" />
+        <meta property="og:url" content="https://guyorlov.com" />
+        
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Guy Orlov | Data Analyst, Dashboards & Accessibility Expert" />
+        <meta name="twitter:description" content="Explore Guy Orlov's data analytics portfolio with Power BI, SQL, Tableau, Excel, and Figma projects." />
+        <meta name="twitter:image" content="path-to-image.jpg" />
+
+            <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Guy Orlov",
+          "url": "https://guyorlov.com",
+          "jobTitle": "Data Analyst",
+          "sameAs": [
+            "https://www.linkedin.com/in/guyorlov",
+            "https://twitter.com/guyorlov"
+          ],
+          "description": "Data Analyst specializing in Power BI, SQL, Tableau, and accessibility in data visualization."
+        }
+        </script>
+
+
+    <style>
+            /* General Styles for Tags */
+            .tag {
+                cursor: pointer;
+                padding: 5px 10px;
+                margin: 5px;
+                background-color: #007bff;
+                color: white;
+                border-radius: 5px;
+                font-size: 1rem; /* Default font size */
+            }
+            
+            .tag:hover {
+                background-color: #0056b3;
+            }
+            
+            .hidden {
+                display: none;
+            }
+            
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+            }
+            
+            .service-box {
+                border: 1px solid #ddd;
+                padding: 20px;
+                background-color: #f9f9f9;
+                text-align: center;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .service-box img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
+            
+            h3 {
+                margin: 15px 0 10px;
+                font-size: 1.05rem;
+            }
+            
+            .container {
+                margin-top: 20px;
+            }
+            
+            #tags {
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            /* Mobile Specific Styles */
+            @media (max-width: 768px) {
+                .tag {
+                    font-size: 0.85rem; /* Smaller font size on mobile */
+                    padding: 4px 8px; /* Smaller padding for better fit */
+                }
+            
+                #tags {
+                    flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
+                    gap: 8px; /* Reduce gap between tags */
+                }
+            
+                /* Adjust h3 font size on mobile */
+                .service-box h3 {
+                    font-size: 1rem; /* Reduced font size for titles on mobile */
+                }
+            }
+            
+            /* Further Smaller Device Styles (optional) */
+            @media (max-width: 480px) {
+                .service-box h3 {
+                    font-size: 0.9rem; /* Even smaller font size for very small screens */
+                }
 }
 
-.tag:hover {
-    background-color: #0056b3;
-}
+    </style>
+</head>
 
-.hidden {
-    display: none;
-}
+<body id="page-top" class="home-page">
+    <!-- Navigation -->
+    <div id="navbar-placeholder"></div>
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
+    <!-- Page Content -->
+    <div class="container-fluid p-0">
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Load the navigation dynamically from nav.html
+            fetch('/nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+        </script>
 
-.service-box {
-    border: 1px solid #ddd;
-    padding: 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        <script>
+            function filterProjects(tag) {
+                console.log("Filtering for:", tag); // Debugging log
+                const projects = document.querySelectorAll('.project');
+                projects.forEach(project => {
+                    if (tag === 'all' || project.classList.contains(tag)) {
+                        project.classList.remove('hidden');
+                    } else {
+                        project.classList.add('hidden');
+                    }
+                });
+            }
+        </script>
 
-.service-box img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
+        <section id="portfolio" aria-labelledby="portfolio-title" style="padding: 50px 20px;">
+            <div class="container text-center">
+                <h2 id="portfolio-title" class="service-title">Portfolio</h2>
+                <p class="lead text-muted">Showcasing my work in data analysis, visualisation, and storytelling.</p>
 
-h3 {
-    margin: 15px 0 10px;
-    font-size: 1.05rem;
-}
+                <div id="tags">
+                    <span class="tag" onclick="filterProjects('powerbi')">Power BI</span>
+                    <span class="tag" onclick="filterProjects('sql')">SQL</span>
+                    <span class="tag" onclick="filterProjects('tableau')">Tableau</span>
+                    <span class="tag" onclick="filterProjects('tableau')">Excel</span>
+                    <span class="tag" onclick="filterProjects('figma')">Figma</span>
+                    <span class="tag" onclick="filterProjects('all')">Show All</span>
+                </div>
 
-.container {
-    margin-top: 20px;
-}
+                <div class="row justify-content-center" id="project-boxes">
+                    <!-- Project 1 -->
+                    <div class="col-md-4 project powerbi">
+                        <div class="service-box">
+                            <img src="img/Project_1.png?text=Power+BI+Dashboard" alt="Power BI Dashboard showcasing economic inactivity of disabled people" class="img-fluid" />
+                            <h3>Inactivity of Disabled People | POWER BI</h3>
+                            <p>The dashboard focuses on the economic inactivity of disabled people, providing key insights for educators and training providers.</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="col-md-4 project tableau">
+                        <div class="service-box">
+                            <img src="img/Project_2.png?text=Tableau+Project" alt="Tableau Project" class="img-fluid" />
+                            <h3>Mad Men Series | TABLEAU</h3>
+                            <p>My first Tableau project, involving data cleaning, Power Query, and dashboard design with Figma.</p>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="col-md-4 project powerbi">
+                        <div class="service-box">
+                            <img src="img/Project_2.png?text=PowerPoint+Presentation" alt="PowerPoint Presentation" class="img-fluid" />
+                            <h3>Deaf Together Report 2023 | POWER BI</h3>
+                            <p>A project for Deaf Together Wales to highlight the inclusion of deaf people through events and activities.</p>
+                        </div>
+                    </div>
 
-#tags {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
+                    <!-- Project 4 (Figma) -->
+      <!-- Project 4 (Figma) -->
 
-/* Mobile Specific Styles */
-@media (max-width: 768px) {
-    .tag {
-        font-size: 0.85rem; /* Smaller font size on mobile */
-        padding: 4px 8px; /* Smaller padding for better fit */
-    }
-
-    #tags {
-        flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
-        gap: 8px; /* Reduce gap between tags */
-    }
-
-    /* Adjust h3 font size on mobile */
-    .service-box h3 {
-        font-size: 1rem; /* Reduced font size for titles on mobile */
-    }
-}
-
-/* Further Smaller Device Styles (optional) */
-@media (max-width: 480px) {
-    .service-box h3 {
-        font-size: 0.9rem; /* Even smaller font size for very small screens */
-    }
-}
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

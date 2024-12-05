@@ -703,6 +703,7 @@ table {
     white-space: nowrap;
 }
 
+
 /* Media Queries for Responsive Design */
 @media (min-width: 768px) {
     .skills-list li {

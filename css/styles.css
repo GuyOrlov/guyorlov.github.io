@@ -758,11 +758,7 @@ table {
 /* Ensure percentage text appears outside the bar if the bar width is small */
 .fill[data-percentage]:before {
     right: calc(100% + 5px); /* Move outside the bar if it overflows */
-    color: #000; /* Switch to black for visibility */
-}
-
-.fill[data-percentage]:before {
-    color: white; /* Set default white */
+    color: white; /* Switch to black for visibility */
 }
 
 /* Media Queries for Responsive Design */

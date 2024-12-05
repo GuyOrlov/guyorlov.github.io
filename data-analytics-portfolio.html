@@ -21,6 +21,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Core Theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
     
@@ -118,6 +121,7 @@
             const button = event.relatedTarget; // Button that triggered the modal
             const imgSrc = button.getAttribute('data-bs-img'); // Extract info from data-* attributes
             const modalImage = imageModal.querySelector('#modalImage');
+            console.log('Modal Image Source:', imgSrc); // Debugging log
             modalImage.src = imgSrc; // Update the modal's content
         });
     </script>

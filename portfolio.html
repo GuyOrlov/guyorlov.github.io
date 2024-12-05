@@ -54,60 +54,75 @@
 
 
     <style>
-        .tag {
-            cursor: pointer;
-            padding: 5px 10px;
-            margin: 5px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .tag:hover {
-            background-color: #0056b3;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px; /* Adjust spacing between the cards */
-        }
-
-        .service-box {
-            border: 1px solid #ddd;
-            padding: 20px;
-            background-color: #f9f9f9;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-box img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        h3 {
-            margin: 15px 0 10px;
-            font-size: 1.05rem; /* Reduced by 20% from 1.5rem */
-        }
-
-        .container {
-            margin-top: 20px;
-        }
-
-        #tags {
-            margin-bottom: 30px; /* Adds space between tags and project cards */
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
+            /* General Styles for Tags */
+            .tag {
+                cursor: pointer;
+                padding: 5px 10px;
+                margin: 5px;
+                background-color: #007bff;
+                color: white;
+                border-radius: 5px;
+                font-size: 1rem; /* Default font size */
+            }
+            
+            .tag:hover {
+                background-color: #0056b3;
+            }
+            
+            .hidden {
+                display: none;
+            }
+            
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+            }
+            
+            .service-box {
+                border: 1px solid #ddd;
+                padding: 20px;
+                background-color: #f9f9f9;
+                text-align: center;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .service-box img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
+            
+            h3 {
+                margin: 15px 0 10px;
+                font-size: 1.05rem;
+            }
+            
+            .container {
+                margin-top: 20px;
+            }
+            
+            #tags {
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            /* Mobile Specific Styles */
+            @media (max-width: 768px) {
+                .tag {
+                    font-size: 0.85rem; /* Smaller font size on mobile */
+                    padding: 4px 8px; /* Smaller padding for better fit */
+                }
+            
+                #tags {
+                    flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
+                    gap: 8px; /* Reduce gap between tags */
+                }
+            }
     </style>
 </head>
 

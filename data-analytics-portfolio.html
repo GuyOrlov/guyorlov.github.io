@@ -3,27 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Explore Guy Orlov's data analytics portfolio with Power BI, SQL, Tableau, Excel, and Figma projects. Accessible dashboards and actionable insights for businesses." />
     <meta name="author" content="Guy Orlov" />
     <meta name="keywords" content="Guy Orlov, Power BI, SQL, Data Analyst, Dashboards, Data Visualisation, Accessibility, Tableau, Figma, Microsoft Excel, Business Intelligence, West Midlands" />
-
+    
     <!-- Title Tag -->
     <title>Power BI & SQL Portfolio | Guy Orlov | Data Analyst, Dashboards & Accessibility Expert</title>
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
+    
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
+    
     <!-- Core Theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
-
+    
     <style>
         .service-box {
             border: 1px solid #ddd;
@@ -39,67 +39,6 @@
             border-radius: 8px;
             margin-bottom: 15px;
             cursor: pointer;
-        }
-
-        /* Modal Styles */
-        .modal-content {
-            max-width: 90%;
-            margin: auto;
-        }
-
-        /* Adjustments for mobile */
-        @media (max-width: 768px) {
-            .modal-content {
-                max-width: 100%;
-            }
-        }
-
-        /* Pop-Up Styles */
-        #popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        
-        #popup-content {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            max-width: 90%;
-            max-height: 90%;
-            text-align: center;
-        }
-        
-        #popup img {
-            width: 100%;
-            max-height: 600px; /* Increased max height for larger image */
-            object-fit: contain;
-            border-radius: 8px;
-        }
-        
-        #popup h3 {
-            margin: 10px 0;
-            font-size: 1.25rem; /* Larger font for the title */
-        }
-        
-        #popup .close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #f44336;
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 50%;
         }
     </style>
 </head>
@@ -153,6 +92,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Project Image</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -163,6 +103,7 @@
     </div>
 
     <!-- JavaScript to load the navigation and handle modal -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Load the navigation dynamically from nav.html
         fetch('/nav.html')

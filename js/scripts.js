@@ -30,4 +30,37 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    // Certifications Data (JSON)
+    const certifications = [
+        { "title": "PowerBI PL-300", "year": "2024" },
+        { "title": "Career Essentials in GitHub Professional Certificate", "year": "2024" },
+        { "title": "BPP NVQ Level 3 Data Technician", "year": "2023" },
+        { "title": "Coursera Google Data Analytics Professional Certificate", "year": "2023" },
+        { "title": "Paragon Skills NVQ Level 3 Business Administration", "year": "2020" },
+        { "title": "Sheffield Hallam University, BSc, Computing Visualisation", "year": "2009" }
+    ];
+
+    // Function to render certifications dynamically
+    const renderCertifications = () => {
+        const container = document.getElementById("certifications-container");
+        if (container) {  // Check if container exists to avoid errors
+            certifications.forEach(cert => {
+                const certBox = document.createElement("div");
+                certBox.classList.add("col-md-4", "mb-4");
+
+                certBox.innerHTML = `
+                    <div class="certification-box">
+                        <i class="fa-solid fa-medal"></i>
+                        <h3>${cert.title}</h3>
+                        <p>${cert.year}</p>
+                    </div>
+                `;
+                container.appendChild(certBox);
+            });
+        }
+    };
+
+    // Call function to render certifications
+    renderCertifications();
 });

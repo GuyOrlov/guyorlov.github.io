@@ -28,6 +28,25 @@
     <link href="css/styles.css" rel="stylesheet" />
     
     <style>
+        /* Tag styling */
+        #tags {
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #f1f1f1;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: #dcdcdc;
+        }
+
         .service-box {
             border: 1px solid #ddd;
             padding: 20px;
@@ -58,11 +77,12 @@
                 <h2 id="portfolio-title" class="service-title">Portfolio</h2>
                 <p class="lead text-muted">Showcasing my work in data analysis, visualisation, and storytelling.</p>
 
-              <div id="tags">
+                <!-- Tags for filtering projects -->
+                <div id="tags">
                     <span class="tag" onclick="filterProjects('powerbi')">Power BI</span>
                     <span class="tag" onclick="filterProjects('sql')">SQL</span>
                     <span class="tag" onclick="filterProjects('tableau')">Tableau</span>
-                    <span class="tag" onclick="filterProjects('tableau')">Excel</span>
+                    <span class="tag" onclick="filterProjects('excel')">Excel</span>
                     <span class="tag" onclick="filterProjects('figma')">Figma</span>
                     <span class="tag" onclick="filterProjects('all')">Show All</span>
                 </div>
@@ -133,6 +153,18 @@
             console.log('Modal Image Source:', imgSrc); // Debugging log
             modalImage.src = imgSrc; // Update the modal's content
         });
+
+        // Function to filter projects based on tag selection
+        function filterProjects(tag) {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                if (tag === 'all' || project.classList.contains(tag)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>

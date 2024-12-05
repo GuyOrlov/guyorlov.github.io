@@ -85,6 +85,23 @@
   box-sizing: border-box;
 }
 
+.testimonial {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.testimonial p.lead {
+    font-size: 1.2rem;
+    color: #333;
+}
+.testimonial p strong {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+}
+
 /* Default theme (gray background) */
 body {
   background-color: #F4F4F4; /* Light gray background */

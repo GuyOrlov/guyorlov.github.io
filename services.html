@@ -12,7 +12,7 @@
     <!-- Open Graph (OG) Meta Tags for Social Media Sharing -->
     <meta property="og:title" content="Data Analytics & Accessibility Services | Guy Orlov" />
     <meta property="og:description" content="Transform raw data into actionable insights with expert services in data visualisation, analytics, and accessibility by Guy Orlov." />
-    <meta property="og:image" content="https://guyorlov.com/assets/images/profile.png" /> <!-- Update with actual image link -->
+    <meta property="og:image" content="https://guyorlov.com/assets/images/profile.png" />
     <meta property="og:url" content="https://guyorlov.com/services.html" />
     <meta property="og:type" content="website" />
 
@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Data Analytics & Accessibility Services | Guy Orlov" />
     <meta name="twitter:description" content="Unlock business potential with expert data services, including Power BI dashboards, SQL analysis, and accessibility consulting." />
-    <meta name="twitter:image" content="img/profile.jpg" /> <!-- Update with actual image link -->
+    <meta name="twitter:image" content="img/profile.jpg" />
 
     <!-- Title Tag -->
     <title>Data Analytics, Power BI, SQL & Accessibility Services | Guy Orlov</title>
@@ -36,6 +36,72 @@
 
     <!-- Core Theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <style>
+        .section-services {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .service-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        #service-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .service-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px 20px;
+            width: calc(50% - 15px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .service-box i {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .service-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-box {
+                width: 100%;
+            }
+        }
+    </style>
 
     <!-- Structured Data (JSON-LD) for Rich Snippets -->
     <script type="application/ld+json">
@@ -63,23 +129,9 @@
     </script>
 </head>
 
- <body id="page-top" class="home-page">
+<body id="page-top" class="home-page">
     <!-- Navigation -->
     <div id="navbar-placeholder"></div>
-
-    <!-- Page Content -->
-    <div class="container-fluid p-0">
-        <!-- Your content here -->
-    </div>
-
-    <script>
-        // Load the navigation dynamically from nav.html
-        fetch('/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-    </script>
 
     <!-- Page Content -->
     <div class="container-fluid p-0">
@@ -114,6 +166,15 @@
             </div>
         </section>
     </div>
+
+    <script>
+        // Load the navigation dynamically from nav.html
+        fetch('/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

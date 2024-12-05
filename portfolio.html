@@ -89,36 +89,31 @@
 
     <!-- Page Content -->
     <div class="container-fluid p-0">
-    </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Load the navigation dynamically from nav.html
+            fetch('/nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                });
+        </script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Load the navigation dynamically from nav.html
-        fetch('/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-    </script>
-
-    <script>
-    function filterProjects(tag) {
-        console.log("Filtering for:", tag); // Debugging log
-        const projects = document.querySelectorAll('.project');
-        projects.forEach(project => {
-            // Check if project should be visible based on its class
-            if (tag === 'all' || project.classList.contains(tag)) {
-                project.classList.remove('hidden');
-            } else {
-                project.classList.add('hidden');
+        <script>
+            function filterProjects(tag) {
+                console.log("Filtering for:", tag); // Debugging log
+                const projects = document.querySelectorAll('.project');
+                projects.forEach(project => {
+                    if (tag === 'all' || project.classList.contains(tag)) {
+                        project.classList.remove('hidden');
+                    } else {
+                        project.classList.add('hidden');
+                    }
+                });
             }
-        });
-    }
-</script>
+        </script>
 
-
-    <div class="container-fluid p-0">
         <section id="portfolio" aria-labelledby="portfolio-title" style="padding: 50px 20px;">
             <div class="container text-center">
                 <h2 id="portfolio-title" class="service-title">Portfolio</h2>
@@ -157,33 +152,19 @@
                             <p>A project for Deaf Together Wales to highlight the inclusion of deaf people through events and activities.</p>
                         </div>
                     </div>
+
+                    <!-- Project 4 (Figma) -->
+                    <div class="col-md-4 project figma"> <!-- Ensure "figma" is included as a class -->
+                        <div class="service-box">
+                            <img src="img/Project_2.png?text=Figma+Project" alt="Figma Project" class="img-fluid" />
+                            <h3>Design Work | FIGMA</h3>
+                            <p>Using Figma to create a visually engaging user interface for a data dashboard.</p>
+                        </div>
+                    </div>
+
                 </div>
-
-                        <!-- Project 4 -->
-                        <div class="col-md-4 project figma"> <!-- Ensure "figma" is included as a class -->
-            <div class="service-box">
-                <img src="img/Project_2.png?text=Figma+Project" alt="Figma Project" class="img-fluid" />
-                <h3>Design Work | FIGMA</h3>
-                <p>Using Figma to create a visually engaging user interface for a data dashboard.</p>
-            </div>
-        </div>
-
             </div>
         </section>
     </div>
-
-    <script>
-        function filterProjects(tag) {
-            const projects = document.querySelectorAll('.project');
-            projects.forEach(project => {
-                if (tag === 'all' || project.classList.contains(tag)) {
-                    project.classList.remove('hidden');
-                } else {
-                    project.classList.add('hidden');
-                }
-            });
-        }
-    </script>
 </body>
-
 </html>

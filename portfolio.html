@@ -102,6 +102,22 @@
             });
     </script>
 
+    <script>
+    function filterProjects(tag) {
+        console.log("Filtering for:", tag); // Debugging log
+        const projects = document.querySelectorAll('.project');
+        projects.forEach(project => {
+            // Check if project should be visible based on its class
+            if (tag === 'all' || project.classList.contains(tag)) {
+                project.classList.remove('hidden');
+            } else {
+                project.classList.add('hidden');
+            }
+        });
+    }
+</script>
+
+
     <div class="container-fluid p-0">
         <section id="portfolio" aria-labelledby="portfolio-title" style="padding: 50px 20px;">
             <div class="container text-center">
@@ -142,6 +158,16 @@
                         </div>
                     </div>
                 </div>
+
+                        <!-- Project 4 -->
+                        <div class="col-md-4 project figma"> <!-- Ensure "figma" is included as a class -->
+            <div class="service-box">
+                <img src="img/Project_2.png?text=Figma+Project" alt="Figma Project" class="img-fluid" />
+                <h3>Design Work | FIGMA</h3>
+                <p>Using Figma to create a visually engaging user interface for a data dashboard.</p>
+            </div>
+        </div>
+
             </div>
         </section>
     </div>

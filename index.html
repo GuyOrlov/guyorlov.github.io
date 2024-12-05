@@ -307,40 +307,40 @@ With expertise in <span class="text-black"> data cleaning</span>, crafting <span
     </div>
 </section>
 
-<style>
-    .skill-percentage {
-        color: white; /* Set font color to white */
-        position: absolute; /* Position text absolutely */
-        right: 10px; /* Align to the right */
-        top: 50%; /* Center vertically */
-        transform: translateY(-50%); /* Adjust for centering */
-    }
+    <style>
+        .skill-bar {
+            position: relative; /* Set position to relative for absolute positioning of percentage */
+            height: 20px; /* Set height for the skill bar */
+            background-color: #e0e0e0; /* Background color of the skill bar */
+            border-radius: 5px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow to maintain shape */
+        }
+    
+        .fill {
+            height: 100%; /* Fill height of skill bar */
+            background-color: #007bff; /* Fill color for the skill level */
+            position: relative; /* Position relative for child elements */
+        }
+    
+        /* Make sure to use a different color for fills with lower contrast */
+        .fill.technical { background-color: #007bff; } /* Blue */
+        .fill.soft { background-color: #6c757d; } /* Grey */
+    
+        .skill-percentage {
+            color: white; /* Set font color to white */
+            position: absolute; /* Position text absolutely */
+            right: 10px; /* Align to the right */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+            font-weight: bold;
+        }
+    
+        /* For low width (less than 80%) skills, keep text visible */
+        .fill[data-width="80"] { background-color: #0078d4; }
+        .fill[data-width="70"] { background-color: #1a8cff; }
+        .fill[data-width="65"] { background-color: #80bfff; }
+    </style>
 
-    .skill-bar {
-        position: relative; /* Set position to relative for absolute positioning of percentage */
-        height: 20px; /* Set height for the skill bar */
-        background-color: #e0e0e0; /* Background color of the skill bar */
-        border-radius: 5px; /* Rounded corners */
-        overflow: hidden; /* Hide overflow to maintain shape */
-    }
-
-    .fill {
-        height: 100%; /* Fill height of skill bar */
-        background-color: #007bff; /* Fill color for the skill level */
-        position: relative; /* Position relative for child elements */
-    }
-</style>
-<hr class="m-0" />
-
-            <!-- certifications-->
-<!-- Certifications -->
-<section class="resume-section" id="certifications">
-    <div class="resume-section-content">
-        <h2 class="mb-5 section-title">Certifications</h2>
-        <div class="row" id="certifications-container">
-            <!-- Certification Boxes will be dynamically added here -->
-        </div>
-    </div>
 </section>
 
 

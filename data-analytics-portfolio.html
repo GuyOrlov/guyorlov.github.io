@@ -25,14 +25,7 @@
     <!-- Core Theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
 
-    <style>
-        .service-box img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            cursor: pointer; /* Make the image clickable */
-        }
-
+     <style>
         /* Modal Styles */
         .modal {
             display: none;
@@ -45,7 +38,7 @@
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.7);
         }
-
+    
         .modal-content {
             background-color: #fff;
             margin: 10% auto;
@@ -55,13 +48,13 @@
             max-width: 900px;
             text-align: center;
         }
-
+    
         .modal img {
             width: 100%;
             height: auto;
             border-radius: 8px;
         }
-
+    
         .close {
             color: #aaa;
             float: right;
@@ -69,14 +62,22 @@
             font-weight: bold;
             cursor: pointer;
         }
-
+    
         .close:hover,
         .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
+    
+        /* Reduce title font size */
+        #modalTitle {
+            font-size: 1.5rem; /* Smaller font size for the title */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
     </style>
+
 </head>
 
 <body id="page-top" class="home-page">

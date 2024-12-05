@@ -684,44 +684,14 @@ table {
     height: 100%;
     border-radius: 5px;
     position: relative;
-}
-
-/* Skill Percentage Text */
-.skill-percentage {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff; /* White text color */
-    font-size: 0.9em;
-    font-weight: bold;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: visible; /* Ensure text remains visible */
-}
-
-/* Common Skill Bar Styles */
-.skill-bar {
-    width: 100%;
-    height: 20px;
-    background-color: #e0e0e0; /* Light gray background */
-    border-radius: 5px;
-    margin-top: 5px;
-    overflow: hidden;
-    position: relative;
-}
-
-/* The filled portion of the skill bar */
-.fill {
-    height: 100%;
-    border-radius: 5px;
-    position: relative;
     color: white; /* Ensure white text on top of fill */
     text-align: right; /* Align percentage to the right */
     padding-right: 15px; /* Add padding to avoid text clipping */
+    background-color: #4caf50; /* Default color (can be customized) */
 }
 
-/* Adjust text visibility based on bar width */
-.fill::before {
+/* Skill Percentage Text */
+.fill[data-percentage]::after {
     content: attr(data-percentage); /* Dynamically display the percentage */
     position: absolute;
     right: 10px;
@@ -731,12 +701,6 @@ table {
     font-size: 0.9em;
     font-weight: bold;
     white-space: nowrap;
-}
-
-/* Ensure percentage text appears outside the bar if the bar width is small */
-.fill[data-percentage]:before {
-    right: calc(100% + 5px); /* Move outside the bar if it overflows */
-    color: white; /* Switch to black for visibility */
 }
 
 /* Media Queries for Responsive Design */
@@ -757,6 +721,7 @@ table {
         width: 100%; /* Full width for mobile */
     }
 }
+
 
 caption {
   padding-top: 0.5rem;

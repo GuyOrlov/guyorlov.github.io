@@ -25,197 +25,106 @@
     <!-- Core Theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
 
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="Guy Orlov | Data Analyst, Dashboards & Accessibility Expert" />
-        <meta property="og:description" content="Explore Guy Orlov's data analytics portfolio with Power BI, SQL, Tableau, Excel, and Figma projects." />
-        <meta property="og:image" content="path-to-image.jpg" />
-        <meta property="og:url" content="https://guyorlov.com" />
-        
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Guy Orlov | Data Analyst, Dashboards & Accessibility Expert" />
-        <meta name="twitter:description" content="Explore Guy Orlov's data analytics portfolio with Power BI, SQL, Tableau, Excel, and Figma projects." />
-        <meta name="twitter:image" content="path-to-image.jpg" />
-
-            <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Guy Orlov",
-          "url": "https://guyorlov.com",
-          "jobTitle": "Data Analyst",
-          "sameAs": [
-            "https://www.linkedin.com/in/guyorlov",
-            "https://twitter.com/guyorlov"
-          ],
-          "description": "Data Analyst specializing in Power BI, SQL, Tableau, and accessibility in data visualization."
-        }
-        </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
-            /* General Styles for Tags */
-            .tag {
-                cursor: pointer;
-                padding: 5px 10px;
-                margin: 5px;
-                background-color: #007bff;
-                color: white;
-                border-radius: 5px;
-                font-size: 1rem; /* Default font size */
-            }
-            
-            .tag:hover {
-                background-color: #0056b3;
-            }
-            
-            .hidden {
-                display: none;
-            }
-            
-            .row {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 30px;
-            }
-            
-            .service-box {
-                border: 1px solid #ddd;
-                padding: 20px;
-                background-color: #f9f9f9;
-                text-align: center;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-            
-            .service-box img {
-                max-width: 100%;
-                border-radius: 8px;
-                margin-bottom: 15px;
-            }
-            
-            h3 {
-                margin: 15px 0 10px;
-                font-size: 1.05rem;
-            }
-            
-            .container {
-                margin-top: 20px;
-            }
-            
-            #tags {
-                margin-bottom: 30px;
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-            }
-            
-            /* Mobile Specific Styles */
-            @media (max-width: 768px) {
-                .tag {
-                    font-size: 0.85rem; /* Smaller font size on mobile */
-                    padding: 4px 8px; /* Smaller padding for better fit */
-                }
-            
-                #tags {
-                    flex-wrap: wrap; /* Allow tags to wrap on smaller screens */
-                    gap: 8px; /* Reduce gap between tags */
-                }
-            
-                /* Adjust h3 font size on mobile */
-                .service-box h3 {
-                    font-size: 1rem; /* Reduced font size for titles on mobile */
-                }
-            }
-            
-            /* Further Smaller Device Styles (optional) */
-            @media (max-width: 480px) {
-                .service-box h3 {
-                    font-size: 0.9rem; /* Even smaller font size for very small screens */
-                }
-}
+        .service-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
+        .service-box img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            max-width: 90%;
+            margin: auto;
+        }
+
+        /* Adjustments for mobile */
+        @media (max-width: 768px) {
+            .modal-content {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body id="page-top" class="home-page">
-    <!-- Navigation -->
-    <div id="navbar-placeholder"></div>
-
     <!-- Page Content -->
     <div class="container-fluid p-0">
-        <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            // Load the navigation dynamically from nav.html
-            fetch('/nav.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-placeholder').innerHTML = data;
-                });
-        </script>
-
-        <script>
-            function filterProjects(tag) {
-                console.log("Filtering for:", tag); // Debugging log
-                const projects = document.querySelectorAll('.project');
-                projects.forEach(project => {
-                    if (tag === 'all' || project.classList.contains(tag)) {
-                        project.classList.remove('hidden');
-                    } else {
-                        project.classList.add('hidden');
-                    }
-                });
-            }
-        </script>
-
         <section id="portfolio" aria-labelledby="portfolio-title" style="padding: 50px 20px;">
             <div class="container text-center">
                 <h2 id="portfolio-title" class="service-title">Portfolio</h2>
                 <p class="lead text-muted">Showcasing my work in data analysis, visualisation, and storytelling.</p>
 
-                <div id="tags">
-                    <span class="tag" onclick="filterProjects('powerbi')">Power BI</span>
-                    <span class="tag" onclick="filterProjects('sql')">SQL</span>
-                    <span class="tag" onclick="filterProjects('tableau')">Tableau</span>
-                    <span class="tag" onclick="filterProjects('tableau')">Excel</span>
-                    <span class="tag" onclick="filterProjects('figma')">Figma</span>
-                    <span class="tag" onclick="filterProjects('all')">Show All</span>
-                </div>
-
                 <div class="row justify-content-center" id="project-boxes">
                     <!-- Project 1 -->
                     <div class="col-md-4 project powerbi">
                         <div class="service-box">
-                            <img src="img/Project_1.png?text=Power+BI+Dashboard" alt="Power BI Dashboard showcasing economic inactivity of disabled people" class="img-fluid" />
+                            <img src="img/Project_1.png" alt="Power BI Dashboard showcasing economic inactivity of disabled people" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="img/Project_1.png" />
                             <h3>Inactivity of Disabled People | POWER BI</h3>
                             <p>The dashboard focuses on the economic inactivity of disabled people, providing key insights for educators and training providers.</p>
                         </div>
                     </div>
+
                     <!-- Project 2 -->
                     <div class="col-md-4 project tableau">
                         <div class="service-box">
-                            <img src="img/Project_2.png?text=Tableau+Project" alt="Tableau Project" class="img-fluid" />
+                            <img src="img/Project_2.png" alt="Tableau Project" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="img/Project_2.png" />
                             <h3>Mad Men Series | TABLEAU</h3>
                             <p>My first Tableau project, involving data cleaning, Power Query, and dashboard design with Figma.</p>
                         </div>
                     </div>
+
                     <!-- Project 3 -->
                     <div class="col-md-4 project powerbi">
                         <div class="service-box">
-                            <img src="img/Project_2.png?text=PowerPoint+Presentation" alt="PowerPoint Presentation" class="img-fluid" />
+                            <img src="img/Project_3.png" alt="PowerPoint Presentation" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="img/Project_3.png" />
                             <h3>Deaf Together Report 2023 | POWER BI</h3>
                             <p>A project for Deaf Together Wales to highlight the inclusion of deaf people through events and activities.</p>
                         </div>
                     </div>
 
-                    <!-- Project 4 (Figma) -->
-      <!-- Project 4 (Figma) -->
-
                 </div>
             </div>
         </section>
     </div>
+
+    <!-- Modal for displaying full-size image -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="Full-size Image" id="modalImage" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to load the image into the modal -->
+    <script>
+        const modalImage = document.getElementById('modalImage');
+        const modalTrigger = document.querySelectorAll('[data-bs-toggle="modal"]');
+
+        modalTrigger.forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                const imgSrc = trigger.getAttribute('data-bs-img');
+                modalImage.src = imgSrc;
+            });
+        });
+    </script>
 </body>
 </html>

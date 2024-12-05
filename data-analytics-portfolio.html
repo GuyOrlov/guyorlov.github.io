@@ -181,17 +181,35 @@
         </div>
     </div>
 
-    <!-- JavaScript to load the image into the modal -->
-    <script>
-        const modalImage = document.getElementById('modalImage');
-        const modalTrigger = document.querySelectorAll('[data-bs-toggle="modal"]');
+            <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="" />
+        </div>
+    </div>
 
-        modalTrigger.forEach((trigger) => {
-            trigger.addEventListener('click', () => {
-                const imgSrc = trigger.getAttribute('data-bs-img');
-                modalImage.src = imgSrc;
-            });
-        });
+    <!-- JavaScript to load the image into the modal -->
+  <script>
+        // Open the modal with the clicked image
+        function openModal(title, imageUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalImage').src = imageUrl;
+            document.getElementById('imageModal').style.display = "block";
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        // Close the modal if the user clicks anywhere outside of the modal content
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('imageModal')) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>

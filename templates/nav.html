@@ -182,14 +182,17 @@
     </div>
 </nav>
 
-<!-- Theme switcher example -->
-<div class="theme-switcher-container">
-    <label class="theme-switcher-label">Switch Theme</label>
-    <label class="theme-switcher">
-        <input type="checkbox">
-        <span class="slider"></span>
-    </label>
-</div>
+<!-- Include the nav.html using JavaScript -->
+<div id="navbar-placeholder"></div>
+
+<script>
+    document.getElementById('navbar-placeholder').innerHTML = fetch('templates/nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+</script>
+
 
 <!-- Bootstrap JS (Optional) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

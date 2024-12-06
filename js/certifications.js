@@ -1,6 +1,3 @@
-// Select the certifications container
-const certificationsContainer = document.getElementById('certifications-container');
-
 // Define the certifications content
 const certificationsHTML = `
     <ul class="fa-ul mb-0">

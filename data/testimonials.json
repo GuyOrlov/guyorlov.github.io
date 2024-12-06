@@ -1,4 +1,10 @@
 [
-    { "text": "Guy's insights transformed our business!", "author": "John Doe, CEO of DataTech" },
-    { "text": "Incredible attention to detail!", "author": "Jane Smith, Head of Marketing" }
+    {
+        "text": "Guy Orlov's data dashboard provided valuable insights that helped us enhance the programme and improve accessibility for the Deaf Gathering Cymru Festival, which took place at Chapter Arts Centre, Cardiff.",
+        "author": "Jonny Cotsen, Programme Curator, Deaf Gathering Cymru, September 2023"
+    },
+    {
+    "text": "Guy Orlov's effort in R Studio, combined with a technical AI tool for exploring data outcomes, provided excellent guidance. I greatly appreciated his contributions to the research data outcome in visual graphs.",
+    "author": "Arjun Shrestha, PhD Student, University of Birmingham, November 2024"
+    }
 ]

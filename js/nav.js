@@ -1,14 +1,14 @@
-async function loadNavbar() {
-    try {
-        const response = await fetch('/nav.html');
+fetch('/nav.html')
+    .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.text();
+        return response.text();
+    })
+    .then(data => {
+        console.log(data); // Debugging line to verify nav.html content
         document.getElementById('navbar-placeholder').innerHTML = data;
-    } catch (error) {
+    })
+    .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
-    }
-}
-
-loadNavbar();
+    });

@@ -11389,6 +11389,23 @@ section.resume-section {
   padding-bottom: 3rem;
   max-width: 75rem;
 }
+
+.resume-section {
+    margin: 20px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem; /* Adds space between title and list */
+    text-align: center; /* Optional: Align title to the center */
+}
+
+#certifications-container {
+    margin-top: 1rem;
+}
+
+
+
 section.resume-section .resume-section-content {
   width: 100%;
 }

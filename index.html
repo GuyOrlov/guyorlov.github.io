@@ -127,20 +127,10 @@ With expertise in <span class="text-black"> data cleaning</span>, crafting <span
             </section>
             
 <hr class="m-0" />
-
-<!-- Testimonials Section -->
-<section class="resume-section" id="testimonials">
-    <div class="resume-section-content">
-        <h2 class="mb-5 section-title">Testimonials</h2>
-        <div id="testimonials-container">
-            <!-- Testimonials will be loaded here -->
-        </div>
-    </div>
-</section>
             
 <script>
     // Load testimonials from the JSON file
-    fetch('/js/testimonials.json')
+    fetch('/js/testimonials.js')
         .then(response => response.json())
         .then(data => {
             const testimonialsContainer = document.getElementById('testimonials-container');

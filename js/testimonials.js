@@ -1,4 +1,4 @@
-fetch('data/testimonials.json')
+fetch('/data/testimonials.json')
     .then(response => response.json())
     .then(data => {
         const testimonialsContainer = document.getElementById('testimonials-container');

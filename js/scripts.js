@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Certifications Data (JSON)
     const certifications = [
-        { "title": "PowerBI PL-300", "year": "2024" },
+        { "title": "PowerBI PL-300", "year": "2025" },
         { "title": "Career Essentials in GitHub Professional Certificate", "year": "2024" },
         { "title": "BPP NVQ Level 3 Data Technician", "year": "2023" },
         { "title": "Coursera Google Data Analytics Professional Certificate", "year": "2023" },

@@ -17,84 +17,72 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Apply Inter font to the body with a regular (light) weight */
         body {
             font-family: 'Inter', sans-serif;
-            font-weight: 400; /* Light font */
+            font-weight: 400;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Default background style */
         .bg-light-theme {
             background-color: #f8f9fa;
             color: #333;
         }
 
-        /* Dark background style */
         .bg-dark-theme {
             background-color: #333;
             color: #f8f9fa;
         }
 
-        /* Make navbar items lighter and change text color to light black */
         .navbar-nav .nav-link {
-            font-weight: 400; /* Light font */
-            color: #333; /* Light black color */
+            font-weight: 400;
+            color: #333;
         }
 
-        /* For mobile navigation (navbar brand) */
         .navbar-dark .navbar-brand {
-            color: #333 !important; /* Set the text color for mobile */
+            color: #333 !important;
         }
 
         .navbar-dark .navbar-brand:hover {
-            color: #555 !important; /* Set the hover color */
+            color: #555 !important;
         }
 
-        /* Change the color of the menu icon in mobile view */
         .navbar-toggler-icon {
-            background-color: #333 !important; /* Dark color for the hamburger icon */
+            background-color: #333 !important;
         }
 
-        /* Optional: Change the color of the icon when hovered */
         .navbar-toggler-icon:hover {
-            background-color: #555 !important; /* Darker grey when hovering over the icon */
+            background-color: #555 !important;
         }
 
-        /* Hover effect for nav links */
         .navbar-nav .nav-link:hover {
-            color: #555; /* Darker grey on hover */
+            color: #555;
         }
 
-        /* Hide cross icon by default */
         .navbar-toggler-icon.close {
             display: none;
         }
-        
-        /* Show cross icon when menu is open */
+
         .navbar-toggler:not(.collapsed) .navbar-toggler-icon.close {
             display: block;
         }
-        
-        /* Hide hamburger icon when menu is open */
+
         .navbar-toggler:not(.collapsed) .navbar-toggler-icon.hamburger {
             display: none;
         }
-        
-        /* Show hamburger icon when menu is collapsed */
+
         .navbar-toggler.collapsed .navbar-toggler-icon.hamburger {
             display: block;
         }
-        
-        /* Hide the cross icon when menu is collapsed */
+
         .navbar-toggler.collapsed .navbar-toggler-icon.close {
             display: none;
         }
+    </style>
 </head>
 
 <body class="bg-light-theme">
 
-    <!-- templates/nav.html -->
+    <!-- Static Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav" aria-label="Main navigation">
         <a class="navbar-brand js-scroll-trigger" href="/index.html#page-top">
             <span class="d-block d-lg-none">Guy Orlov | Data Analyst</span>
@@ -103,9 +91,7 @@
             </span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <!-- Hamburger Icon -->
             <span class="navbar-toggler-icon hamburger"></span>
-            <!-- Cross Icon -->
             <span class="navbar-toggler-icon close"><i class="fa fa-times"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -148,18 +134,6 @@
             </ul>
         </div>
     </nav>
-
-    <!-- Include the nav.html using JavaScript -->
-    <!-- Remove the existing <nav> block and only use the script to load the nav from nav.html -->
-    <div id="navbar-placeholder"></div>
-
-    <script>
-        fetch('/templates/nav.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-    </script>
 
     <!-- Bootstrap JS (Optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

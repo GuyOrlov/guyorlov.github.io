@@ -4,18 +4,6 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
 */
 
-window.addEventListener('DOMContentLoaded', event => {
-    // Activate Bootstrap scrollspy on the main nav element
-    const sideNav = document.body.querySelector('#sideNav');
-    if (sideNav && typeof bootstrap !== 'undefined') {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#sideNav',
-            rootMargin: '0px 0px -40%',
-        });
-    } else {
-        console.error('Bootstrap or ScrollSpy is not available.');
-    }
-
     // Certifications Data (JSON)
     const certifications = [
         { title: "PowerBI PL-300", year: "2025" },

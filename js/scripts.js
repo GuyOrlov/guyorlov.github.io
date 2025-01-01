@@ -16,17 +16,6 @@ window.addEventListener('DOMContentLoaded', event => {
         console.error('Bootstrap or ScrollSpy is not available.');
     }
 
-    // Collapse responsive navbar when a link is clicked
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = Array.from(document.querySelectorAll('#navbarResponsive .nav-link'));
-    responsiveNavItems.forEach(responsiveNavItem => {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click(); // Simulates a click on the navbar toggler
-            }
-        });
-    });
-
     // Certifications Data (JSON)
     const certifications = [
         { title: "PowerBI PL-300", year: "2025" },

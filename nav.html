@@ -70,19 +70,24 @@
         .navbar-toggler-icon.close {
             display: none;
         }
-
-        /* Hide hamburger icon when menu is open */
-        .navbar-toggler.collapsed .navbar-toggler-icon.hamburger {
-            display: block;
-        }
-
+        
         /* Show cross icon when menu is open */
         .navbar-toggler:not(.collapsed) .navbar-toggler-icon.close {
             display: block;
         }
-
+        
         /* Hide hamburger icon when menu is open */
         .navbar-toggler:not(.collapsed) .navbar-toggler-icon.hamburger {
+            display: none;
+        }
+        
+        /* Show hamburger icon when menu is collapsed */
+        .navbar-toggler.collapsed .navbar-toggler-icon.hamburger {
+            display: block;
+        }
+        
+        /* Hide the cross icon when menu is collapsed */
+        .navbar-toggler.collapsed .navbar-toggler-icon.close {
             display: none;
         }
 

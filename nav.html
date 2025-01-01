@@ -65,6 +65,20 @@
             color: #555; /* Darker grey on hover */
         }
 
+        /* Hide cross icon by default */
+        .navbar-toggler-icon.close {
+            display: none;
+        }
+
+        /* Show cross icon when menu is open */
+        .navbar-toggler.collapsed .navbar-toggler-icon.hamburger {
+            display: none;
+        }
+
+        .navbar-toggler:not(.collapsed) .navbar-toggler-icon.close {
+            display: block;
+        }
+
         /* Custom Theme Switcher Toggle Styles */
         .theme-switcher-container {
             display: flex;
@@ -140,7 +154,10 @@
         </span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <!-- Hamburger Icon -->
+        <span class="navbar-toggler-icon hamburger"></span>
+        <!-- Cross Icon -->
+        <span class="navbar-toggler-icon close"><i class="fa fa-times"></i></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">

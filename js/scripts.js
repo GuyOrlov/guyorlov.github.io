@@ -4,21 +4,28 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
 */
 
-    // Certifications Data (JSON)
-    const certifications = [
-        { title: "PowerBI PL-300", year: "2025" },
-        { title: "Career Essentials in GitHub Professional Certificate", year: "2024" },
-        { title: "BPP NVQ Level 3 Data Technician", year: "2023" },
-        { title: "Coursera Google Data Analytics Professional Certificate", year: "2023" },
-        { title: "Paragon Skills NVQ Level 3 Business Administration", year: "2020" },
-        { title: "Sheffield Hallam University, BSc, Computing Visualisation", year: "2009" }
-    ];
+// Certifications Data (JSON)
+const certifications = [
+    { title: "PowerBI PL-300", year: "2025" },
+    { title: "Career Essentials in GitHub Professional Certificate", year: "2024" },
+    { title: "BPP NVQ Level 3 Data Technician", year: "2023" },
+    { title: "Coursera Google Data Analytics Professional Certificate", year: "2023" },
+    { title: "Paragon Skills NVQ Level 3 Business Administration", year: "2020" },
+    { title: "Sheffield Hallam University, BSc, Computing Visualisation", year: "2009" }
+];
 
-    // Function to render certifications dynamically
-    const renderCertifications = () => {
-        const container = document.getElementById("certifications-container");
-        if (container) { // Check if container exists to avoid errors
-            certifications.forEach(cert => {
+// Function to render certifications dynamically
+const renderCertifications = () => {
+    const container = document.getElementById("certifications-container");
+    if (container) {
+        if (certifications.length === 0) {
+            container.innerHTML = '<p>No certifications available at this time.</p>';
+            return;
+        }
+
+        const fragment = document.createDocumentFragment();
+        certifications.forEach(cert => {
+            if (cert.title && cert.year) {
                 const certBox = document.createElement("div");
                 certBox.classList.add("col-sm-6", "col-md-4", "col-lg-3", "mb-4");
                 certBox.innerHTML = `
@@ -28,13 +35,14 @@
                         <p>${cert.year}</p>
                     </div>
                 `;
-                container.appendChild(certBox);
-            });
-        } else {
-            console.error('Certifications container not found.');
-        }
-    };
+                fragment.appendChild(certBox);
+            }
+        });
+        container.appendChild(fragment);
+    } else {
+        console.error('Certifications container not found.');
+    }
+};
 
-    // Render certifications when page loads
-    renderCertifications();
-});
+// Render certifications when page loads
+renderCertifications();

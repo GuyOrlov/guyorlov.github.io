@@ -1,1411 +1,670 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guy Orlov - Data Analyst & Visualisation Specialist</title>
-    <meta name="description" content="Guy Orlov - Data Analyst specialising in accessibility, data visualisation, and dashboard creation. Transforming data into actionable insights.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <style>
-        :root {
-            --font-size: 16px;
-            --background: #ffffff;
-            --foreground: oklch(0.145 0 0);
-            --card: #ffffff;
-            --card-foreground: oklch(0.145 0 0);
-            --popover: oklch(1 0 0);
-            --popover-foreground: oklch(0.145 0 0);
-            --primary: #030213;
-            --primary-foreground: oklch(1 0 0);
-            --secondary: oklch(0.95 0.0058 264.53);
-            --secondary-foreground: #030213;
-            --muted: #ececf0;
-            --muted-foreground: #717182;
-            --accent: #e9ebef;
-            --accent-foreground: #030213;
-            --destructive: #d4183d;
-            --destructive-foreground: #ffffff;
-            --border: rgba(0, 0, 0, 0.1);
-            --input: transparent;
-            --input-background: #f3f3f5;
-            --switch-background: #cbced4;
-            --font-weight-medium: 500;
-            --font-weight-normal: 400;
-            --ring: oklch(0.708 0 0);
-            --chart-1: oklch(0.646 0.222 41.116);
-            --chart-2: oklch(0.6 0.118 184.704);
-            --chart-3: oklch(0.398 0.07 227.392);
-            --chart-4: oklch(0.828 0.189 84.429);
-            --chart-5: oklch(0.769 0.188 70.08);
-            --radius: 0.625rem;
-        }
-
-        .dark {
-            --background: oklch(0.145 0 0);
-            --foreground: oklch(0.985 0 0);
-            --card: oklch(0.145 0 0);
-            --card-foreground: oklch(0.985 0 0);
-            --popover: oklch(0.145 0 0);
-            --popover-foreground: oklch(0.985 0 0);
-            --primary: oklch(0.985 0 0);
-            --primary-foreground: oklch(0.205 0 0);
-            --secondary: oklch(0.269 0 0);
-            --secondary-foreground: oklch(0.985 0 0);
-            --muted: oklch(0.269 0 0);
-            --muted-foreground: oklch(0.708 0 0);
-            --accent: oklch(0.269 0 0);
-            --accent-foreground: oklch(0.985 0 0);
-            --destructive: oklch(0.396 0.141 25.723);
-            --destructive-foreground: oklch(0.637 0.237 25.331);
-            --border: oklch(0.269 0 0);
-            --input: oklch(0.269 0 0);
-            --ring: oklch(0.439 0 0);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: var(--font-size);
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--background);
-            color: var(--foreground);
-            line-height: 1.6;
-        }
-
-        .bg-background { background-color: var(--background); }
-        .text-foreground { color: var(--foreground); }
-        .bg-card { background-color: var(--card); }
-        .text-card-foreground { color: var(--card-foreground); }
-        .bg-primary { background-color: var(--primary); }
-        .text-primary-foreground { color: var(--primary-foreground); }
-        .bg-secondary { background-color: var(--secondary); }
-        .text-secondary-foreground { color: var(--secondary-foreground); }
-        .bg-muted { background-color: var(--muted); }
-        .text-muted-foreground { color: var(--muted-foreground); }
-        .bg-accent { background-color: var(--accent); }
-        .text-accent-foreground { color: var(--accent-foreground); }
-        .border-border { border-color: var(--border); }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.4;
-            margin-bottom: 0.75rem;
-        }
-
-        h4 {
-            font-size: 1.125rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.5;
-            margin-bottom: 0.5rem;
-        }
-
-        p {
-            font-size: 1rem;
-            font-weight: var(--font-weight-normal);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: var(--font-weight-medium);
-            text-decoration: none;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--primary-foreground);
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--border);
-            background-color: transparent;
-            color: var(--foreground);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--accent);
-            transform: scale(1.05);
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            background-color: var(--secondary);
-            color: var(--secondary-foreground);
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-            z-index: 50;
-            padding: 1rem 0;
-        }
-
-        .dark .header {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .nav {
-            max-width: 64rem;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: var(--foreground);
-            text-decoration: none;
-            transition: color 0.2s;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .nav-link:hover {
-            color: var(--muted-foreground);
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            padding-top: 5rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 64rem;
-            margin: 0 auto;
-        }
-
-        .section {
-            padding: 5rem 1.5rem;
-        }
-
-        .container {
-            max-width: 64rem;
-            margin: 0 auto;
-        }
-
-        .grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-        .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-
-        @media (min-width: 768px) {
-            .md\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-            .md\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-            .md\\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-        }
-
-        @media (min-width: 1024px) {
-            .lg\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-            .lg\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-            .lg\\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-        }
-
-        .card {
-            background-color: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            transition: all 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-0.25rem);
-            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-bar {
-            width: 100%;
-            height: 1rem;
-            background-color: var(--muted);
-            border-radius: 9999px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background-color: #10b981;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 0.5rem;
-            color: white;
-            font-size: 0.75rem;
-            transition: width 1.5s ease-in-out;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: 1px solid var(--border);
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            color: var(--foreground);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--accent);
-        }
-
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            padding: 1rem;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background-color: var(--card);
-            border-radius: 0.5rem;
-            padding: 2rem;
-            max-width: 90vw;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--muted-foreground);
-        }
-
-        .project-grid {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .project-card {
-            background-color: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 0.5rem;
-            overflow: hidden;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-0.25rem);
-            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            padding: 0.25rem 0.75rem;
-            background-color: var(--muted);
-            color: var(--muted-foreground);
-            border-radius: 9999px;
-            font-size: 0.75rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .social-link:hover {
-            transform: scale(1.1);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .items-center {
-            align-items: center;
-        }
-
-        .justify-center {
-            justify-content: center;
-        }
-
-        .justify-between {
-            justify-content: space-between;
-        }
-
-        .gap-4 {
-            gap: 1rem;
-        }
-
-        .gap-6 {
-            gap: 1.5rem;
-        }
-
-        .gap-8 {
-            gap: 2rem;
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-
-        .mb-8 {
-            margin-bottom: 2rem;
-        }
-
-        .mb-12 {
-            margin-bottom: 3rem;
-        }
-
-        .mb-16 {
-            margin-bottom: 4rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-sm {
-            font-size: 0.875rem;
-        }
-
-        .text-xs {
-            font-size: 0.75rem;
-        }
-
-        .max-w-2xl {
-            max-width: 42rem;
-        }
-
-        .max-w-4xl {
-            max-width: 56rem;
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .bg-muted-30 {
-            background-color: rgba(236, 236, 240, 0.3);
-        }
-
-        .dark .bg-muted-30 {
-            background-color: rgba(38, 38, 42, 0.3);
-        }
-
-        .profile-image {
-            width: 16rem;
-            height: 16rem;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .skill-tag {
-            background-color: var(--secondary);
-            color: var(--secondary-foreground);
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            display: inline-block;
-            margin: 0.125rem;
-        }
-
-        .cert-card {
-            text-align: center;
-            padding: 1rem;
-            background-color: rgba(236, 236, 240, 0.5);
-            border-radius: 0.5rem;
-        }
-
-        .dark .cert-card {
-            background-color: rgba(38, 38, 42, 0.5);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guy Orlov | Data Analyst | Power BI Dashboards | Accessibility Reporting UK</title>
+  <meta name="description" content="Guy Orlov is a UK-based Data Analyst specialising in Power BI dashboards, Excel reporting, and accessibility-focused data solutions. View projects and services." />
+  <meta name="keywords" content="Guy Orlov, Data Analyst UK, Power BI dashboards, Excel reporting, accessibility data, dashboard design, data visualisation, BSL services, accessible reporting" />
+  <meta name="author" content="Guy Orlov" />
+  <meta property="og:title" content="Guy Orlov | Data Analyst Portfolio" />
+  <meta property="og:description" content="Accessible dashboards, Power BI reports, and data solutions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.guyorlov.com" />
+  <meta property="og:site_name" content="Guy Orlov" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guy Orlov | Data Analyst Portfolio" />
+  <meta name="twitter:description" content="Accessible dashboards, Power BI reports, and data solutions." />
+  <link rel="canonical" href="https://www.guyorlov.com/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Guy Orlov",
+      "url": "https://www.guyorlov.com/",
+      "jobTitle": "Data Analyst",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "cSeeker Ltd"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Birmingham",
+        "addressRegion": "West Midlands",
+        "addressCountry": "GB"
+      },
+      "knowsAbout": [
+        "Power BI",
+        "Excel reporting",
+        "Data visualisation",
+        "Accessibility reporting",
+        "Dashboard design"
+      ],
+      "sameAs": [
+        "https://www.guyorlov.com/"
+      ]
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root[data-theme="dark"] {
+      --bg: #121212;
+      --surface: #1c1c1c;
+      --surface-soft: #242424;
+      --text: #f3f3f3;
+      --muted: #b8b8b8;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #f3f3f3;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    :root {
+      --bg: #ededed;
+      --surface: #ffffff;
+      --surface-soft: #f7f7f7;
+      --text: #111111;
+      --muted: #5e5e5e;
+      --line: rgba(0, 0, 0, 0.1);
+      --accent: #111111;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+      --radius: 20px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-label {
+      font-family: 'Poppins', 'Inter', Arial, Helvetica, sans-serif;
+      display: inline-block;
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .8rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-family: 'Poppins', 'Inter', Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: .02em;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.4rem;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .hero {
+      padding: 5.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .panel,
+    .project-card,
+    .service-card,
+    .contact-panel,
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 2.2rem;
+      min-height: 100%;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      font-size: .82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    h1 {
+      font-family: 'Poppins', 'Inter', Arial, Helvetica, sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.03;
+      margin: .8rem 0 1rem;
+    }
+
+    h2 {
+      font-family: 'Poppins', 'Inter', Arial, Helvetica, sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.08;
+      margin: 0 0 1rem;
+    }
+
+    h3 {
+      font-family: 'Poppins', 'Inter', Arial, Helvetica, sans-serif;
+      font-size: 1.15rem;
+      margin: 0 0 .7rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .lead {
+      font-size: 1.06rem;
+      max-width: 58ch;
+    }
+
+    .hero-actions,
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .9rem;
+      margin-top: 1.6rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: .85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover,
+    .project-card:hover,
+    .service-card:hover,
+    .stat-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+    }
+
+    .panel {
+      padding: 1.5rem;
+    }
+
+    .panel ul {
+      margin: .8rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .stat-card {
+      padding: 1.1rem 1rem;
+      background: var(--surface-soft);
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: .35rem;
+    }
+
+    .about-wrap,
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .content-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .services-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .service-card,
+    .project-card {
+      padding: 1.4rem;
+    }
+
+    .project-thumb {
+      height: 170px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #d8d8d8, #f4f4f4);
+      margin-bottom: 1rem;
+      display: grid;
+      place-items: center;
+      color: #666;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: .8rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      padding: .4rem .75rem;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    .project-meta {
+      margin-top: .8rem;
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .help-band {
+      margin-top: 1.6rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .contact-panel {
+      padding: 2rem;
+    }
+
+    footer {
+      padding: 2rem 0 2.6rem;
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main {
+        padding: 1.8rem;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .about-wrap,
+      .contact-wrap,
+      .help-band,
+      .services-grid,
+      .projects-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .theme-toggle {
+      min-height: 42px;
+      padding: .72rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      font-size: .92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        display: none;
+      }
+
+      .nav-wrap {
+        flex-wrap: wrap;
+      }
+
+      .theme-toggle {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-main,
+      .panel,
+      .content-box,
+      .contact-panel,
+      .help-band {
+        padding: 1.4rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <button onclick="scrollToSection('hero')" class="nav-link">
-                Guy Orlov
-            </button>
-            
-            <div class="nav-links">
-                <button onclick="scrollToSection('work')" class="nav-link">Work</button>
-                <button onclick="scrollToSection('about')" class="nav-link">About</button>
-                <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
-                <button onclick="toggleTheme()" class="theme-toggle" id="theme-toggle">
-                    <i data-lucide="sun" class="w-5 h-5"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <div class="mb-6">
-                    <span class="badge mb-4">Available for projects</span>
-                </div>
-                
-                <h1 class="mb-6 max-w-4xl mx-auto">
-                    Transforming Data Into Actionable Insights
-                </h1>
-                
-                <p class="mb-8 max-w-2xl mx-auto text-muted-foreground">
-                    I'm Guy Orlov, a Data Analyst based in the West Midlands, specialising in accessibility, data visualisation, and dashboard creation.
-                    I excel in turning complex data into clear, actionable insights, ensuring data is accessible and inclusive for everyone.
-                </p>
-                
-                <div class="flex gap-4 justify-center flex-wrap">
-                    <button onclick="scrollToSection('work')" class="btn btn-primary">
-                        View Projects
-                    </button>
-                    <button onclick="scrollToSection('contact')" class="btn btn-secondary">
-                        Get in Touch
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work/Projects Section -->
-        <section id="work" class="section">
-            <div class="container">
-                <div class="text-center mb-12">
-                    <h2 class="mb-4">Projects</h2>
-                    <p class="text-muted-foreground max-w-2xl mx-auto">
-                        Personal development projects showcasing data analytics solutions across sports, healthcare, accessibility, and entertainment sectors.
-                    </p>
-                </div>
-
-                <div class="project-grid">
-                    <!-- Project 1: Aston Villa Dashboard -->
-                    <div class="project-card" onclick="openModal('modal1')">
-                        <img src="imgs/Aston Villa 202324 Season Dashboard.png" alt="Aston Villa 2023/24 Season Dashboard" class="project-image">
-                        <div class="project-content">
-                            <h3>Aston Villa 2023/24 Season Dashboard</h3>
-                            <div class="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                                <span>Type: Personal Project</span>
-                                <span>Duration: 1 week</span>
-                            </div>
-                            <p class="text-muted-foreground text-sm">
-                                Comprehensive Power BI dashboard tracking Aston Villa's outstanding 2023/24 Premier League season performance, featuring detailed match analysis and player statistics.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Power BI Desktop</span>
-                                <span class="tag">Football Analytics</span>
-                                <span class="tag">Premier League Data</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Gareth Southgate Dashboard -->
-                    <div class="project-card" onclick="openModal('modal2')">
-                        <img src="imgs/Gareth Southgate England Manager Dashboard.png" alt="Gareth Southgate England Manager Dashboard" class="project-image">
-                        <div class="project-content">
-                            <h3>Gareth Southgate England Manager Dashboard</h3>
-                            <div class="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                                <span>Type: Personal Project</span>
-                                <span>Duration: 5 days</span>
-                            </div>
-                            <p class="text-muted-foreground text-sm">
-                                Discover Gareth Southgate's journey as England manager through an interactive Power BI dashboard. Analyse match statistics, win rates, and key milestones that define his tenure.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Power BI Desktop</span>
-                                <span class="tag">Sports Analytics</span>
-                                <span class="tag">Football Statistics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: Spain Euro 2024 Dashboard -->
-                    <div class="project-card" onclick="openModal('modal3')">
-                        <img src="imgs/Spain UEFA Euro 2024 Championship Dashboard.png" alt="Spain UEFA Euro 2024 Championship Dashboard" class="project-image">
-                        <div class="project-content">
-                            <h3>Spain UEFA Euro 2024 Championship Dashboard</h3>
-                            <div class="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                                <span>Type: Personal Project</span>
-                                <span>Duration: 4 days</span>
-                            </div>
-                            <p class="text-muted-foreground text-sm">
-                                Celebrate Spain's triumph in the 2024 UEFA European Championship with this interactive Power BI dashboard featuring detailed player profiles with sophisticated field tooltips.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Power BI Desktop</span>
-                                <span class="tag">Advanced Tooltips</span>
-                                <span class="tag">Football Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: BSL Learning Tool -->
-                    <div class="project-card" onclick="openModal('modal4')">
-                        <img src="imgs/British Sign Language Interactive Learning Tool.png" alt="British Sign Language Interactive Learning Tool" class="project-image">
-                        <div class="project-content">
-                            <h3>British Sign Language (BSL) Interactive Learning Tool</h3>
-                            <div class="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                                <span>Type: Personal Project</span>
-                                <span>Duration: 2 weeks</span>
-                            </div>
-                            <p class="text-muted-foreground text-sm">
-                                Enhance your understanding of British Sign Language (BSL) with this interactive tool that displays each letter of the alphabet in BSL with before-and-after images.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Interactive Design</span>
-                                <span class="tag">Educational Technology</span>
-                                <span class="tag">Accessibility Tools</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: Lazio Champions League -->
-                    <div class="project-card" onclick="openModal('modal5')">
-                        <img src="imgs/Lazio SS 19992000 UEFA Champions League Campaign.png" alt="Lazio SS 1999/2000 UEFA Champions League Campaign" class="project-image">
-                        <div class="project-content">
-                            <h3>Lazio SS 1999/2000 UEFA Champions League Campaign</h3>
-                            <div class="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                                <span>Type: Personal Project</span>
-                                <span>Duration: 10 days</span>
-                            </div>
-                            <p class="text-muted-foreground text-sm">
-                                Relive Lazio SS's memorable 1999/2000 UEFA Champions League campaign with this Panini sticker-style Power BI dashboard exploring player profiles and match highlights.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Power BI Desktop</span>
-                                <span class="tag">Vintage Design</span>
-                                <span class="tag">Football Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6: Euro 2028 Stadiums -->
-                    <div class="project-card" onclick="openModal('modal6')">
-                        <img src="imgs/UK & Ireland Euro 2028 Host Stadiums Dashboard.png" alt="UK & Ireland Euro 2028 Host Stadiums Dashboard" class="project-image">
-                        <div class="project-content">
-                            <h3>UK & Ireland Euro 2028 Host Stadiums Dashboard</h3>
-                            <div class="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                                <span>Type: Personal Project</span>
-                                <span>Duration: 6 days</span>
-                            </div>
-                            <p class="text-muted-foreground text-sm">
-                                This interactive Power BI dashboard provides a comprehensive overview of the UK & Ireland's host stadiums for the Euro 2028 tournament with detailed insights on each venue.
-                            </p>
-                            <div class="project-tags">
-                                <span class="tag">Power BI Desktop</span>
-                                <span class="tag">Geographic Information</span>
-                                <span class="tag">Stadium Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <h2 class="mb-6">About Me</h2>
-                        <p class="mb-4 text-muted-foreground">
-                            With expertise in data cleaning, crafting impactful dashboards, and using tools like Microsoft Excel, Power BI Services & Desktop, Canva, PowerPoint, and Figma, 
-                            I focus on creating visually engaging and easy-to-understand reports that help businesses make informed decisions.
-                        </p>
-                        <p class="mb-6 text-muted-foreground">
-                            With over 15 years in business management and data insights, I bring extensive experience and proven results in crafting professional dashboards 
-                            and delivering insights that drive decision-making and success across multiple sectors.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">Microsoft Excel</span>
-                            <span class="skill-tag">Power BI Services</span>
-                            <span class="skill-tag">Power BI Desktop</span>
-                            <span class="skill-tag">Canva</span>
-                            <span class="skill-tag">PowerPoint</span>
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Data Visualisation</span>
-                            <span class="skill-tag">Dashboard Creation</span>
-                        </div>
-                    </div>
-                    
-                    <div class="flex justify-center">
-                        <div class="profile-image">
-                            <img src="imgs/profile.jpg" alt="Guy Orlov - Data Analyst">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skills & Expertise Combined Section -->
-                <div class="bg-muted-30 rounded-lg p-8">
-                    <div class="text-center mb-16">
-                        <h2 class="mb-4">Skills & Expertise</h2>
-                        <p class="text-muted-foreground max-w-2xl mx-auto mb-16">
-                            Technical capabilities and sector expertise delivering data solutions across diverse industries.
-                        </p>
-                    </div>
-
-                    <!-- Skills -->
-                    <div class="grid lg:grid-cols-2 gap-12 mb-16">
-                        <!-- Technical Expertise -->
-                        <div>
-                            <h3 class="mb-6 text-muted-foreground">TECHNICAL EXPERTISE</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="bar-chart-3" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Power BI</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 85%;">85%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="file-spreadsheet" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Excel</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 75%;">75%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="figma" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Figma</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 80%;">80%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="bar-chart-3" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Data Visualisation</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 70%;">70%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="database" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">SQL</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 65%;">65%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Core Competencies -->
-                        <div>
-                            <h3 class="mb-6 text-muted-foreground">CORE COMPETENCIES</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="message-circle" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Communication</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 70%;">70%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="brain" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Critical Thinking</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 80%;">80%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="lightbulb" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Problem-Solving</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 75%;">75%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="users" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Teamwork</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 90%;">90%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="eye" class="w-4 h-4 text-muted-foreground"></i>
-                                    <span class="w-28 text-sm">Attention to Detail</span>
-                                    <div class="flex-1">
-                                        <div class="skill-bar">
-                                            <div class="skill-progress" style="width: 60%;">60%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sector Expertise -->
-                    <div class="mb-16">
-                        <h3 class="text-center mb-8">Sector Expertise</h3>
-                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <div class="card text-center">
-                                <i data-lucide="building-2" class="w-8 h-8 mx-auto mb-3" style="color: var(--primary);"></i>
-                                <h4 class="mb-2">Government & Charity</h4>
-                                <p class="text-muted-foreground text-sm">
-                                    Audience-specific budgets and regulatory compliance solutions
-                                </p>
-                            </div>
-                            <div class="card text-center">
-                                <i data-lucide="trophy" class="w-8 h-8 mx-auto mb-3" style="color: var(--primary);"></i>
-                                <h4 class="mb-2">Sports & Leisure</h4>
-                                <p class="text-muted-foreground text-sm">
-                                    KPIs, performance tracking, and club analytics
-                                </p>
-                            </div>
-                            <div class="card text-center">
-                                <i data-lucide="heart" class="w-8 h-8 mx-auto mb-3" style="color: var(--primary);"></i>
-                                <h4 class="mb-2">Accessibility</h4>
-                                <p class="text-muted-foreground text-sm">
-                                    Enhanced workplace accessibility and inclusive design
-                                </p>
-                            </div>
-                            <div class="card text-center">
-                                <i data-lucide="activity" class="w-8 h-8 mx-auto mb-3" style="color: var(--primary);"></i>
-                                <h4 class="mb-2">Healthcare</h4>
-                                <p class="text-muted-foreground text-sm">
-                                    Patient analytics and operational insights
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Key Qualifications -->
-                    <div class="bg-card border border-border rounded-lg p-8">
-                        <h3 class="text-center mb-8">Key Qualifications</h3>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="cert-card">
-                                <i data-lucide="award" class="w-6 h-6 mx-auto mb-3" style="color: var(--primary);"></i>
-                                <h4 class="mb-2">PowerBI PL-300</h4>
-                                <div class="text-sm text-muted-foreground">
-                                    <div>Microsoft</div>
-                                    <div class="flex items-center justify-center gap-1 mt-1">
-                                        <i data-lucide="calendar" class="w-3 h-3"></i>
-                                        <span>2025</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cert-card">
-                                <i data-lucide="award" class="w-6 h-6 mx-auto mb-3" style="color: var(--primary);"></i>
-                                <h4 class="mb-2">Google Data Analytics</h4>
-                                <div class="text-sm text-muted-foreground">
-                                    <div>Google/Coursera</div>
-                                    <div class="flex items-center justify-center gap-1 mt-1">
-                                        <i data-lucide="calendar" class="w-3 h-3"></i>
-                                        <span>2023</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cert-card">
-                                <i data-lucide="award" class="w-6 h-6 mx-auto mb-3" style="color: var(--primary);"></i>
-                                <h4 class="mb-2">BSc Computing Visualisation</h4>
-                                <div class="text-sm text-muted-foreground">
-                                    <div>Sheffield Hallam University</div>
-                                    <div class="flex items-center justify-center gap-1 mt-1">
-                                        <i data-lucide="calendar" class="w-3 h-3"></i>
-                                        <span>2009</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container text-center">
-                <h2 class="mb-6">CONTACT</h2>
-                <h3 class="mb-4">READY TO GAIN INSIGHTS FROM YOUR DATA?</h3>
-                <p class="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                    Contact me today to discuss your data needs and see how I can help you turn numbers into actionable insights!
-                </p>
-                
-                <a href="mailto:guy@guyorlov.com" class="btn mb-12" style="background-color: #3b82f6; color: white;">
-                    Get in Touch
-                </a>
-
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/guyorlov" target="_blank" rel="noopener noreferrer" class="social-link" style="background-color: #0077B5;" title="LinkedIn - Guy Orlov">
-                        <i data-lucide="linkedin" class="w-6 h-6"></i>
-                    </a>
-                    <a href="https://github.com/guyorlov" target="_blank" rel="noopener noreferrer" class="social-link" style="background-color: #333;" title="GitHub - @guyorlov">
-                        <i data-lucide="github" class="w-6 h-6"></i>
-                    </a>
-                    <a href="https://stackoverflow.com/users/your-profile" target="_blank" rel="noopener noreferrer" class="social-link" style="background-color: #f48024;" title="Stack Overflow - Guy Orlov">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092L6.785 12.743zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.155z"/>
-                        </svg>
-                    </a>
-                    <a href="https://kaggle.com/guyorlov" target="_blank" rel="noopener noreferrer" class="social-link" style="background-color: #20BEFF;" title="Kaggle - @guyorlov">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.336"/>
-                        </svg>
-                    </a>
-                    <a href="https://reddit.com/u/guyorlov" target="_blank" rel="noopener noreferrer" class="social-link" style="background-color: #FF4500;" title="Reddit - u/guyorlov">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.461.461c.662.662 1.846.97 2.927.97 1.081 0 2.265-.308 2.927-.97a.327.327 0 0 0 0-.461.327.327 0 0 0-.461 0c-.547.547-1.427.783-2.466.783-1.039 0-1.92-.236-2.466-.783z"/>
-                        </svg>
-                    </a>
-                    <a href="https://guyorlov.com" target="_blank" rel="noopener noreferrer" class="social-link" style="background-color: #6B7280;" title="Website - guyorlov.com">
-                        <i data-lucide="globe" class="w-6 h-6"></i>
-                    </a>
-                    <a href="mailto:guy@guyorlov.com" class="social-link" style="background-color: #EA4335;" title="Email - guy@guyorlov.com">
-                        <i data-lucide="mail" class="w-6 h-6"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-border">
-        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p class="text-sm text-muted-foreground">
-                © 2025 Guy Orlov. All rights reserved.
-            </p>
-            
-            <div class="flex gap-6 text-sm text-muted-foreground">
-                <button onclick="scrollToSection('hero')" class="hover:text-foreground transition-colors">
-                    Back to Top
-                </button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Project Modals -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
-            <h2 class="mb-4">Aston Villa 2023/24 Season Dashboard</h2>
-            <img src="imgs/Aston Villa 202324 Season Dashboard.png" alt="Aston Villa 2023/24 Season Dashboard" class="w-full h-64 object-cover rounded mb-6">
-            <div class="grid grid-cols-3 gap-4 text-center p-4 bg-muted-30 rounded mb-6">
-                <div>
-                    <div class="text-sm text-muted-foreground">Type</div>
-                    <div class="text-sm">Personal Project</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Duration</div>
-                    <div class="text-sm">1 week</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Status</div>
-                    <div class="badge">Complete</div>
-                </div>
-            </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Technologies Used</h4>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag">Power BI Desktop</span>
-                    <span class="tag">Football Analytics</span>
-                    <span class="tag">Premier League Data</span>
-                    <span class="tag">Data Visualisation</span>
-                    <span class="tag">Sports Statistics</span>
-                </div>
-            </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Project Overview</h4>
-                <p class="text-sm text-muted-foreground mb-4">
-                    Comprehensive Power BI dashboard tracking Aston Villa's outstanding 2023/24 Premier League season performance. This interactive platform provides detailed match analysis, player statistics, and seasonal progression insights.
-                </p>
-            </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Key Challenges</h4>
-                <ul class="text-sm text-muted-foreground">
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-orange-600 mt-1">⚡</span>
-                        <span>Processing complex football statistics and match data from multiple sources</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-orange-600 mt-1">⚡</span>
-                        <span>Creating intuitive visualisations for both technical and non-technical stakeholders</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-orange-600 mt-1">⚡</span>
-                        <span>Implementing real-time performance tracking across the season</span>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="mb-3">Key Outcomes</h4>
-                <ul class="text-sm text-muted-foreground">
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Enhanced player performance analysis and comparison capabilities</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Improved tactical decision-making through data-driven insights</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Comprehensive season-long tracking of key performance indicators</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <header>
+    <div class="container nav-wrap">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a class="brand" href="#top">Guy Orlov</a>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light mode">🌙 Dark mode</button>
     </div>
+  </header>
 
-    <!-- Additional modals for other projects would follow the same pattern -->
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
-            <h2 class="mb-4">Gareth Southgate England Manager Dashboard</h2>
-            <img src="imgs/Gareth Southgate England Manager Dashboard.png" alt="Gareth Southgate England Manager Dashboard" class="w-full h-64 object-cover rounded mb-6">
-            <div class="grid grid-cols-3 gap-4 text-center p-4 bg-muted-30 rounded mb-6">
-                <div>
-                    <div class="text-sm text-muted-foreground">Type</div>
-                    <div class="text-sm">Personal Project</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Duration</div>
-                    <div class="text-sm">5 days</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Status</div>
-                    <div class="badge">Complete</div>
-                </div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">Data Analyst • Accessibility • Dashboards</div>
+          <h1>Clear dashboards. Accessible insight. Better decisions.</h1>
+          <p class="lead">I am Guy Orlov, a Birmingham and West Midlands-based data analyst in the UK focused on accessible reporting, Power BI dashboards, Excel analysis, and visual storytelling that turns complex information into something people can actually use.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-secondary" href="#contact">Get in touch</a>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <div class="stat-number">15+</div>
+              <p>Years of business experience</p>
             </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Technologies Used</h4>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag">Power BI Desktop</span>
-                    <span class="tag">Sports Analytics</span>
-                    <span class="tag">Football Statistics</span>
-                    <span class="tag">Historical Data Analysis</span>
-                </div>
+            <div class="stat-card">
+              <div class="stat-number">4</div>
+              <p>Core areas: Power BI, Excel, accessibility, design</p>
             </div>
-            <div>
-                <h4 class="mb-3">Key Outcomes</h4>
-                <ul class="text-sm text-muted-foreground">
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Comprehensive analysis of England's most successful modern managerial period</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Clear visualisation of performance trends and key achievement milestones</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Data-driven insights into tactical changes and player development</span>
-                    </li>
-                </ul>
+            <div class="stat-card">
+              <div class="stat-number">1</div>
+              <p>Goal: make data clear and useful</p>
             </div>
+          </div>
         </div>
-    </div>
 
-    <!-- Continue with modals 3-6 following the same pattern -->
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
-            <h2 class="mb-4">Spain UEFA Euro 2024 Championship Dashboard</h2>
-            <img src="imgs/Spain UEFA Euro 2024 Championship Dashboard.png" alt="Spain UEFA Euro 2024 Championship Dashboard" class="w-full h-64 object-cover rounded mb-6">
-            <div class="grid grid-cols-3 gap-4 text-center p-4 bg-muted-30 rounded mb-6">
-                <div>
-                    <div class="text-sm text-muted-foreground">Type</div>
-                    <div class="text-sm">Personal Project</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Duration</div>
-                    <div class="text-sm">4 days</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Status</div>
-                    <div class="badge">Complete</div>
-                </div>
+        <div class="hero-side">
+          <div class="panel">
+            <h3>What I do</h3>
+            <ul>
+              <li>Power BI dashboards and reporting</li>
+              <li>Accessible design and inclusive presentation</li>
+              <li>Excel cleaning, structure, and analysis</li>
+              <li>Visual storytelling for business audiences</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Tools I use</h3>
+            <div class="tag-row">
+              <span class="tag">Power BI</span>
+              <span class="tag">Excel</span>
+              <span class="tag">PowerPoint</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Figma</span>
             </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Technologies Used</h4>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag">Power BI Desktop</span>
-                    <span class="tag">Advanced Tooltips</span>
-                    <span class="tag">Football Analytics</span>
-                </div>
-            </div>
-            <div>
-                <h4 class="mb-3">Key Outcomes</h4>
-                <ul class="text-sm text-muted-foreground">
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Comprehensive analysis of Spain's championship-winning squad</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Interactive player profiling with detailed performance metrics</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Engaging visualisation of tournament success and individual contributions</span>
-                    </li>
-                </ul>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
-            <h2 class="mb-4">British Sign Language (BSL) Interactive Learning Tool</h2>
-            <img src="imgs/British Sign Language Interactive Learning Tool.png" alt="British Sign Language Interactive Learning Tool" class="w-full h-64 object-cover rounded mb-6">
-            <div class="grid grid-cols-3 gap-4 text-center p-4 bg-muted-30 rounded mb-6">
-                <div>
-                    <div class="text-sm text-muted-foreground">Type</div>
-                    <div class="text-sm">Personal Project</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Duration</div>
-                    <div class="text-sm">2 weeks</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Status</div>
-                    <div class="badge">Complete</div>
-                </div>
-            </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Technologies Used</h4>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag">Interactive Design</span>
-                    <span class="tag">Educational Technology</span>
-                    <span class="tag">Accessibility Tools</span>
-                </div>
-            </div>
-            <div>
-                <h4 class="mb-3">Key Outcomes</h4>
-                <ul class="text-sm text-muted-foreground">
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Enhanced BSL alphabet learning through interactive visual tools</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Improved communication accessibility for hearing-impaired users</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Positive feedback from BSL educators and learners</span>
-                    </li>
-                </ul>
-            </div>
+    <section id="about" class="section">
+      <div class="container about-wrap">
+        <div>
+          <div class="section-label">About</div>
+          <h2>Analytical thinking with an accessibility-first mindset.</h2>
         </div>
-    </div>
-
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal5')">&times;</button>
-            <h2 class="mb-4">Lazio SS 1999/2000 UEFA Champions League Campaign</h2>
-            <img src="imgs/Lazio SS 19992000 UEFA Champions League Campaign.png" alt="Lazio SS 1999/2000 UEFA Champions League Campaign" class="w-full h-64 object-cover rounded mb-6">
-            <div class="grid grid-cols-3 gap-4 text-center p-4 bg-muted-30 rounded mb-6">
-                <div>
-                    <div class="text-sm text-muted-foreground">Type</div>
-                    <div class="text-sm">Personal Project</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Duration</div>
-                    <div class="text-sm">10 days</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Status</div>
-                    <div class="badge">Complete</div>
-                </div>
-            </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Technologies Used</h4>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag">Power BI Desktop</span>
-                    <span class="tag">Vintage Design Elements</span>
-                    <span class="tag">Football Analytics</span>
-                </div>
-            </div>
-            <div>
-                <h4 class="mb-3">Key Outcomes</h4>
-                <ul class="text-sm text-muted-foreground">
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Unique nostalgic presentation of historical football data</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Engaging tribute to Lazio's memorable European campaign</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Innovative blend of vintage aesthetics with modern analytics</span>
-                    </li>
-                </ul>
-            </div>
+        <div class="content-box">
+          <p>With 15 years of experience across business, operations, and service delivery, I focus on building reports and dashboards that are visually clear, structured, and easy to understand.</p>
+          <p style="margin-top:1rem;">My work combines Microsoft Excel, Power BI, PowerPoint, Canva, and Figma to turn raw information into useful insight that supports real decisions.</p>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal6')">&times;</button>
-            <h2 class="mb-4">UK & Ireland Euro 2028 Host Stadiums Dashboard</h2>
-            <img src="imgs/UK & Ireland Euro 2028 Host Stadiums Dashboard.png" alt="UK & Ireland Euro 2028 Host Stadiums Dashboard" class="w-full h-64 object-cover rounded mb-6">
-            <div class="grid grid-cols-3 gap-4 text-center p-4 bg-muted-30 rounded mb-6">
-                <div>
-                    <div class="text-sm text-muted-foreground">Type</div>
-                    <div class="text-sm">Personal Project</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Duration</div>
-                    <div class="text-sm">6 days</div>
-                </div>
-                <div>
-                    <div class="text-sm text-muted-foreground">Status</div>
-                    <div class="badge">Complete</div>
-                </div>
-            </div>
-            <div class="mb-6">
-                <h4 class="mb-3">Technologies Used</h4>
-                <div class="flex flex-wrap gap-2">
-                    <span class="tag">Power BI Desktop</span>
-                    <span class="tag">Geographic Information Systems</span>
-                    <span class="tag">Stadium Analytics</span>
-                </div>
-            </div>
-            <div>
-                <h4 class="mb-3">Key Outcomes</h4>
-                <ul class="text-sm text-muted-foreground">
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Comprehensive overview of Euro 2028 tournament infrastructure</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Enhanced understanding of stadium capacities and geographic distribution</span>
-                    </li>
-                    <li class="flex items-start gap-2 mb-2">
-                        <span class="text-green-600 mt-1">✓</span>
-                        <span>Interactive exploration tools for tournament venue planning</span>
-                    </li>
-                </ul>
-            </div>
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-label">Services</div>
+        <h2>How I can help</h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Dashboard design</h3>
+            <p>Clean, structured dashboards that make reporting easier to follow and easier to share.</p>
+          </article>
+          <article class="service-card">
+            <h3>Accessible reporting</h3>
+            <p>Inclusive layouts and clearer presentation for people who need information that is easy to read and use.</p>
+          </article>
+          <article class="service-card">
+            <h3>Excel and data cleaning</h3>
+            <p>Organising messy spreadsheets and preparing data so it becomes reliable and report-ready.</p>
+          </article>
+          <article class="service-card">
+            <h3>Visual storytelling</h3>
+            <p>Turning figures into visuals and narratives that help clients understand what matters most.</p>
+          </article>
         </div>
+
+        <div class="help-band">
+          <div>
+            <div class="section-label">Need help?</div>
+            <h3 style="font-size:1.5rem; margin-bottom:.7rem;">Support for new clients</h3>
+            <p>Whether you need a dashboard, accessibility-focused reporting, or support presenting information more clearly, I can help you create something practical and professional.</p>
+          </div>
+          <div class="btns" style="justify-content:flex-start; margin-top:0;">
+            <a class="btn btn-primary" href="mailto:hello@guyorlov.com">Email me</a>
+            <a class="btn btn-secondary" href="#contact">Contact page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-label">Projects</div>
+        <h2>Selected work</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-thumb" role="img" aria-label="Project preview image placeholder for Guy Orlov Power BI dashboard portfolio item">Project preview</div>
+            <h3>Southgate Records</h3>
+            <p>A Power BI dashboard analysing Gareth Southgate’s record as England manager through a clean visual format.</p>
+            <div class="project-meta">Focus: performance trends and historical insight</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb" role="img" aria-label="Project preview image placeholder for Guy Orlov Power BI dashboard portfolio item">Project preview</div>
+            <h3>Aston Villa dashboard</h3>
+            <p>A player profile and season dashboard focused on the 2024/25 Aston Villa squad and key player information.</p>
+            <div class="project-meta">Focus: player profiles and season analysis</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb" role="img" aria-label="Project preview image placeholder for Guy Orlov Power BI dashboard portfolio item">Project preview</div>
+            <h3>Spain Euro 2024 dashboard</h3>
+            <p>A visual report on Spain’s UEFA Euro 2024 win with player insights, roles, and valuations.</p>
+            <div class="project-meta">Focus: tournament storytelling and team insight</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb" role="img" aria-label="Project preview image placeholder for Guy Orlov Power BI dashboard portfolio item">Project preview</div>
+            <h3>Accessible reporting concepts</h3>
+            <p>Design-led reporting ideas that balance clarity, structure, and inclusive presentation.</p>
+            <div class="project-meta">Focus: clarity, accessibility, and usability</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-wrap">
+        <div>
+          <div class="section-label">Contact</div>
+          <h2>Let’s build something clear and useful.</h2>
+        </div>
+        <div class="contact-panel">
+          <p>Available for dashboard work, data reporting, and accessibility-focused projects.</p>
+          <div class="btns">
+            <a class="btn btn-primary" href="mailto:hello@guyorlov.com">Email me</a>
+            <a class="btn btn-secondary" href="#" aria-label="Visit Guy Orlov LinkedIn profile">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <p>© 2026 Guy Orlov</p>
+      <p>Built as a GitHub Pages friendly static portfolio</p>
     </div>
+  </footer>
+  <script>
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
 
-    <script>
-        // Theme toggle functionality
-        function toggleTheme() {
-            const html = document.documentElement;
-            const themeToggle = document.getElementById('theme-toggle');
-            const icon = themeToggle.querySelector('i');
-            
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                icon.setAttribute('data-lucide', 'sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.add('dark');
-                icon.setAttribute('data-lucide', 'moon');
-                localStorage.setItem('theme', 'dark');
-            }
-            
-            // Reinitialize lucide icons
-            lucide.createIcons();
-        }
+    if (savedTheme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️ Light mode';
+    }
 
-        // Load saved theme
-        function loadTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            const html = document.documentElement;
-            const themeToggle = document.getElementById('theme-toggle');
-            const icon = themeToggle.querySelector('i');
-            
-            if (savedTheme === 'dark') {
-                html.classList.add('dark');
-                icon.setAttribute('data-lucide', 'moon');
-            } else {
-                html.classList.remove('dark');
-                icon.setAttribute('data-lucide', 'sun');
-            }
-            
-            lucide.createIcons();
-        }
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
 
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Modal functionality
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Close modal when clicking outside
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('modal')) {
-                e.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            loadTheme();
-            lucide.createIcons();
-        });
-    </script>
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        toggle.textContent = '🌙 Dark mode';
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggle.textContent = '☀️ Light mode';
+      }
+    });
+  </script>
 </body>
 </html>

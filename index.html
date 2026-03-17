@@ -464,6 +464,20 @@
     }
 
     @media (max-width: 640px) {
+      .theme-toggle {
+        font-size: 0;
+        width: 44px;
+        padding: 0;
+      }
+
+      .theme-toggle::after {
+        content: "🌙";
+        font-size: 1.2rem;
+      }
+
+      :root[data-theme="dark"] .theme-toggle::after {
+        content: "☀️";
+      }
       nav {
         display: none;
         width: 100%;
@@ -693,7 +707,7 @@
 
     if (savedTheme === 'dark') {
       root.setAttribute('data-theme', 'dark');
-      toggle.textContent = '☀️ Light mode';
+      toggle.textContent = window.innerWidth <= 640 ? '' : '☀️ Light mode';
     }
 
     menuToggle.addEventListener('click', () => {
@@ -707,7 +721,7 @@
       if (isDark) {
         root.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
-        toggle.textContent = '🌙 Dark mode';
+        toggle.textContent = window.innerWidth <= 640 ? '' : '🌙 Dark mode';
       } else {
         root.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');

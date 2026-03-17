@@ -145,6 +145,20 @@
       font-weight: 600;
     }
 
+    .menu-toggle {
+      display: none;
+      min-height: 42px;
+      padding: .72rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface-soft);
+      color: var(--text);
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      font-size: .92rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
     .hero {
       padding: 5.5rem 0 3.5rem;
     }
@@ -452,6 +466,20 @@
     @media (max-width: 640px) {
       nav {
         display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: .75rem;
+        padding: .75rem 0 0;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .nav-wrap {
@@ -489,7 +517,10 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light mode">🌙 Dark mode</button>
+      <div style="display:flex; gap:.75rem; align-items:center;">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu">☰ Menu</button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light mode">🌙 Dark mode</button>
+      </div>
     </div>
   </header>
 
@@ -656,12 +687,19 @@
   <script>
     const root = document.documentElement;
     const toggle = document.getElementById('themeToggle');
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.querySelector('nav');
     const savedTheme = localStorage.getItem('theme');
 
     if (savedTheme === 'dark') {
       root.setAttribute('data-theme', 'dark');
       toggle.textContent = '☀️ Light mode';
     }
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      menuToggle.textContent = nav.classList.contains('open') ? '✕ Close' : '☰ Menu';
+    });
 
     toggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';

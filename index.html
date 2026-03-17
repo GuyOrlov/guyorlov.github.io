@@ -116,7 +116,7 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      background: rgba(255, 255, 255, 0.94);
+      background: var(--surface);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
@@ -134,13 +134,15 @@
       font-weight: 700;
       font-size: 1.05rem;
       letter-spacing: .02em;
+      color: var(--text);
     }
 
     nav {
       display: flex;
       gap: 1.4rem;
-      color: var(--muted);
+      color: var(--text);
       font-size: .96rem;
+      font-weight: 600;
     }
 
     .hero {
@@ -229,12 +231,20 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: .5rem;
       min-height: 46px;
       padding: .85rem 1.2rem;
       border-radius: 999px;
       font-weight: 700;
       border: 1px solid var(--line);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      color: var(--text);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, opacity .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
 
     .btn:hover,
@@ -245,14 +255,15 @@
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
+      background: #111111;
+      color: #ffffff !important;
+      border-color: #111111;
     }
 
     .btn-secondary {
-      background: #fff;
-      color: var(--text);
+      background: #111111;
+      color: #ffffff;
+      border-color: #111111;
     }
 
     .panel {
@@ -407,7 +418,7 @@
       padding: .72rem 1rem;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: var(--surface);
+      background: var(--surface-soft);
       color: var(--text);
       font-family: 'Inter', Arial, Helvetica, sans-serif;
       font-size: .92rem;
@@ -576,7 +587,7 @@
             <p>Whether you need a dashboard, accessibility-focused reporting, or support presenting information more clearly, I can help you create something practical and professional.</p>
           </div>
           <div class="btns" style="justify-content:flex-start; margin-top:0;">
-            <a class="btn btn-primary" href="mailto:hello@guyorlov.com">Email me</a>
+            <a class="btn btn-primary" href="mailto:guyorlov@gmail.com">📧 Email me</a>
             <a class="btn btn-secondary" href="#contact">Contact page</a>
           </div>
         </div>
@@ -628,8 +639,8 @@
         <div class="contact-panel">
           <p>Available for dashboard work, data reporting, and accessibility-focused projects.</p>
           <div class="btns">
-            <a class="btn btn-primary" href="mailto:hello@guyorlov.com">Email me</a>
-            <a class="btn btn-secondary" href="#" aria-label="Visit Guy Orlov LinkedIn profile">LinkedIn</a>
+            <a class="btn btn-primary" href="mailto:guyorlov@gmail.com">📧 Email me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/guy-orlov/" aria-label="Visit Guy Orlov 🔗 LinkedIn profile" target="_blank" rel="noopener">🔗 LinkedIn</a>
           </div>
         </div>
       </div>
